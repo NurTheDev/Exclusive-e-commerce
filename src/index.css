@@ -1,1 +1,21 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --primary: #FFFFFF;
+    --primary1: #363738;
+    --secondary: #F5F5F5;
+    --secondary1: #FEFAF12;
+    --secondary2: #DB4444;
+    --text: #FAFAFA;
+    --text1: #7D8184;
+    --text2: #000000;
+    --button: #00FF66;
+    --button1: #DB4444;
+    --button1-hover: #E07575;
+    --button2: #E07575;
+    --button2-hover: #A0BCE0;
+    --gold: #FFAD33;
+/*    font section*/
+    --inter: 'Inter', sans-serif;
+    --poppins: 'Poppins', sans-serif;
+}
