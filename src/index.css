@@ -19,3 +19,20 @@
     --inter: 'Inter', sans-serif;
     --poppins: 'Poppins', sans-serif;
 }
+@theme {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-secondary1: var(--secondary1);
+    --color-secondary2: var(--secondary2);
+    --color-text: var(--text);
+    --color-text1: var(--text1);
+    --color-text2: var(--text2);
+    --color-button: var(--button);
+    --color-button1: var(--button1);
+    --color-button1-hover: var(--button1-hover);
+    --color-button2: var(--button2);
+    --color-button2-hover: var(--button2-hover);
+    --color-gold: var(--gold);
+    --font-inter: var(--inter);
+    --font-poppins: var(--poppins);
+}
