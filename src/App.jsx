@@ -1,10 +1,20 @@
 import React from 'react';
+import {Route, Routes} from "react-router";
+import Index from "./Pages/protected/Index.jsx";
+import Home from "./Pages/protected/home/Home.jsx";
+import Login from "./Pages/Login.jsx";
 
 const App = () => {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        </div>
+        <>
+            <Routes>
+                <Route path="/login" element={<Login/>} />
+                {/* Define the protected route structure */}
+                <Route element={<Index/>} >
+                    <Route path="/" element={<Home/>} />
+                </Route>
+            </Routes>
+        </>
     );
 };
 

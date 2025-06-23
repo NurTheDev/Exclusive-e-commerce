@@ -1,4 +1,7 @@
 @layer components{
+    .container {
+     @apply container mx-auto px-4;
+    }
     .small-text {
         font-size: 14px;
         line-height: 1.5;
