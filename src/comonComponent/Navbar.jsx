@@ -1,6 +1,6 @@
 import React from 'react';
 import Status from "./Status.jsx";
-
+import user from "../assets/user.svg";
 const Navbar = () => {
     return (
         <div>
@@ -16,7 +16,7 @@ const Navbar = () => {
                                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                                 data-dropdown-placement="bottom">
                             <span className="sr-only">Open user menu</span>
-                            <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg"
+                            <img className="w-8 h-8 rounded-full" src={user || ""}
                                  alt="user photo"/>
                         </button>
 
@@ -24,9 +24,9 @@ const Navbar = () => {
                             className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600"
                             id="user-dropdown">
                             <div className="px-4 py-3">
-                                <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                                <span className="block text-sm text-gray-900 dark:text-white">Nur Islam</span>
                                 <span
-                                    className="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                                    className="block text-sm  text-gray-500 truncate dark:text-gray-400">nur756.islam@gmail.com</span>
                             </div>
                             <ul className="py-2" aria-labelledby="user-menu-button">
                                 <li>
@@ -39,7 +39,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <a href="#"
-                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Products</a>
                                 </li>
                                 <li>
                                     <a href="#"
@@ -69,19 +69,15 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <a href="#"
+                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                    className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
                             </li>
                             <li>
                                 <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sign Up</a>
                             </li>
                         </ul>
                     </div>

@@ -30,7 +30,6 @@
     --color-secondary2: var(--secondary2);
     --color-text: var(--text);
     --color-text1: var(--text1);
-    --color-text2: var(--text2);
     --color-button: var(--button);
     --color-button1: var(--button1);
     --color-button1-hover: var(--button1-hover);
@@ -71,4 +70,5 @@
     .xl-heading-semi-bold {
         @apply text-5xl leading-6 font-inter font-semibold;
     }
+
 }
