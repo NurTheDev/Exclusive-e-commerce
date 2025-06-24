@@ -2,8 +2,8 @@ import React from 'react';
 
 const Status = () => {
     return (
-        <div className={"bg-black text-white flex justify-end "}>
-            <div className={"container"}>
+        <div className={"bg-black text-white hidden lg:block"}>
+            <div className={"container mx-auto px-4 flex justify-around "}>
                 <div className={"max-w-2/3 flex items-center justify-between w-full"}>
                     <div className={"flex gap-x-2 p-2"}>
                         <p>

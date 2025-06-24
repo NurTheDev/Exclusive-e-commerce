@@ -1,8 +1,10 @@
+
 @import "tailwindcss";
 @import "flowbite/src/themes/default.css";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@custom-variant dark (&:where(.dark, .dark *));
 :root {
     --primary: #FFFFFF;
     --primary1: #363738;
@@ -37,4 +39,36 @@
     --color-gold: var(--gold);
     --font-inter: var(--inter);
     --font-poppins: var(--poppins);
+}
+@layer components{
+    .small-text {
+        @apply text-xs lg:text-sm leading-6 font-poppins;
+    }
+    .small-text-medium {
+        @apply text-xs lg:text-sm leading-6 font-poppins font-medium;
+    }
+    .normal-text {
+        @apply text-base leading-6 font-poppins;
+    }
+    .normal-text-medium {
+        @apply text-base leading-6 font-poppins font-medium;
+    }
+    .normal-text-semi-bold {
+        @apply text-base leading-6 font-poppins font-semibold;
+    }
+    .small-heading-medium {
+        @apply text-xl leading-6 font-poppins font-medium;
+    }
+    .small-heading-semi-bold {
+        @apply text-xl leading-6 font-poppins font-semibold;
+    }
+    .medium-heading {
+        @apply text-2xl leading-6 font-inter font-bold;
+    }
+    .large-heading-bold {
+        @apply text-4xl leading-6 font-inter font-bold;
+    }
+    .xl-heading-semi-bold {
+        @apply text-5xl leading-6 font-inter font-semibold;
+    }
 }
