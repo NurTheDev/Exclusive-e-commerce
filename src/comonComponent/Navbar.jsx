@@ -1,91 +1,125 @@
 import React from 'react';
 import Status from "./Status.jsx";
 import user from "../assets/user.svg";
+import {IoMdSearch} from "react-icons/io";
+import {FaRegHeart} from "react-icons/fa";
+import {FiShoppingCart} from "react-icons/fi";
+
 const Navbar = () => {
     return (
-        <div>
-            <Status/>
-            <nav className="bg-white border-gray-200 dark:bg-gray-900">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a  className="flex items-center space-x-3 rtl:space-x-reverse medium-heading">
-                       Exclusive
-                    </a>
-                    <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                        <button type="button"
-                                className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                                id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
-                                data-dropdown-placement="bottom">
-                            <span className="sr-only">Open user menu</span>
-                            <img className="w-8 h-8 rounded-full" src={user || ""}
-                                 alt="user photo"/>
-                        </button>
-
-                        <div
-                            className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600"
-                            id="user-dropdown">
-                            <div className="px-4 py-3">
-                                <span className="block text-sm text-gray-900 dark:text-white">Nur Islam</span>
-                                <span
-                                    className="block text-sm  text-gray-500 truncate dark:text-gray-400">nur756.islam@gmail.com</span>
-                            </div>
-                            <ul className="py-2" aria-labelledby="user-menu-button">
-                                <li>
-                                    <a href="#"
-                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Products</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
-                                        out</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <button data-collapse-toggle="navbar-user" type="button"
-                                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                aria-controls="navbar-user" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                 viewBox="0 0 17 14">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                      strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+        <>
+            <div>
+                <Status/>
+            </div>
+            <div className="navbar container mx-auto">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 className="h-5 w-5"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2"
+                                      d="M4 6h16M4 12h8m-8 6h16"/>
                             </svg>
-                        </button>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                        >
+                            <li><a>Home</a></li>
+                            <li>
+                                <a>Parent</a>
+                            </li>
+                            <li><a>Item 3</a></li>
+                        </ul>
                     </div>
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-                         id="navbar-user">
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <a className="cursor-pointer medium-heading ">Exclusive</a>
+                </div>
+
+                {/* Desktop menu */}
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 text-base transition duration-300 ease-in-out">
+                        <li className="hover:border-b-2 hover:border-gray-500">
+                            <a className="hover:text-gray-900">Home</a>
+                        </li>
+                        <li className="hover:border-b-2 hover:border-gray-500">
+                            <a className="hover:text-gray-900">Contact</a>
+                        </li>
+                        <li className="hover:border-b-2 hover:border-gray-500">
+                            <a className="hover:text-gray-900">About</a>
+                        </li>
+                        <li className="hover:border-b-2 hover:border-gray-500">
+                            <a className="hover:text-gray-900">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+                {/* Cart + Avatar (end) */}
+                <div className="navbar-end flex-none">
+                    <div className={"relative items-center mr-5 hidden lg:flex"}>
+                        <input type="text" placeholder="Search" className="input input-bordered input-sm mr-5 bg-gray-100"/>
+                        <span
+                            className={"absolute right-4 px-2 cursor-pointer text-2xl z-10 text-gray-500 hover:text-gray-600"}>
+                            <IoMdSearch/>
+                        </span>
+                    </div>
+                    {/* Cart dropdown */}
+                    <div className="dropdown dropdown-end flex items-center">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                            <div className="indicator">
+                                <span className={" text-xl"}><FiShoppingCart/></span>
+                                <span
+                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">8</span>
+                            </div>
+                        </div>
+                        <div className=" ml-4">
+                            <span className={"cursor-pointer text-xl"}><FaRegHeart/></span>
+                        </div>
+                        <div
+                            tabIndex={0}
+                            className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow"
+                        >
+                            <div className="card-body">
+                                <span className="text-lg font-bold">8 Items</span>
+                                <span className="text-info">Subtotal: $999</span>
+                                <div className="card-actions">
+                                    <button className="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Avatar dropdown */}
+                    <div className="dropdown dropdown-end ml-2">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="User avatar"
+                                    src={user || ""}
+                                />
+                            </div>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                        >
                             <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                                   aria-current="page">Home</a>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
                             </li>
-                            <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sign Up</a>
-                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
                         </ul>
                     </div>
                 </div>
-            </nav>
-
-        </div>
+            </div>
+        </>
     );
 };
 
-export default Navbar;
+export default React.memo(Navbar) || Navbar;
