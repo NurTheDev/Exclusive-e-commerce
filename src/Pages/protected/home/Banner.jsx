@@ -4,6 +4,7 @@ import {MdArrowForwardIos} from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {getBannerImg} from "../../../utils/index.js";
 const Banner = () => {
     const [openIndex, setOpenIndex] = useState(null)
     const toggle = (index) => {
@@ -15,8 +16,8 @@ const Banner = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 3,
-        arrows: false,
+        slidesToScroll: 1,
+        arrows: true,
     };
     return (
         <div className={"container mx-auto"}>
@@ -51,12 +52,17 @@ const Banner = () => {
                     </ul>
                     {/*Menu bar start*/}
                     {/*    Carousel Image start*/}
-                    <div className={"col-span-3 bg-red-400"}>
+                    <div className={"col-span-3 "}>
                         <div className="slider-container">
                             <Slider {...settings}>
                                 {bannerData.map((item, index) => (
-                                    <div key={index}>
-                                        <img src={item.image} alt={item.name}/>
+                                    <div key={index} className="w-full h-[350px] !flex !justify-around bg-black">
+                                        <div className={" flex flex-col justify-center gap-y-10"}>
+                                            <p className={"text-white normal-text"}>{item.name}</p>
+                                            <h2 className={"text-white xl-heading-semi-bold"}>Up to {item.voucher} off</h2>
+                                            <button className={"btn "}>Shop Now</button>
+                                        </div>
+                                        <img src={getBannerImg(item.image)} alt={item.name} className="w-1/2 object-cover" />
                                     </div>
                                 ))}
                             </Slider>
