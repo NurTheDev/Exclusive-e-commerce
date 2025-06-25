@@ -2,8 +2,10 @@ import React from 'react';
 import Status from "./Status.jsx";
 import user from "../assets/user.svg";
 import {IoMdSearch} from "react-icons/io";
-import {FaRegHeart} from "react-icons/fa";
-import {FiShoppingCart} from "react-icons/fi";
+import {FaRegHeart, FaRegUser, FaShoppingBag} from "react-icons/fa";
+import {FiShoppingCart, FiStar} from "react-icons/fi";
+import {BiCollection} from "react-icons/bi";
+import {CgLogOut} from "react-icons/cg";
 
 const Navbar = () => {
     return (
@@ -60,7 +62,8 @@ const Navbar = () => {
                 {/* Cart + Avatar (end) */}
                 <div className="navbar-end flex-none">
                     <div className={"relative items-center mr-5 hidden lg:flex"}>
-                        <input type="text" placeholder="Search" className="input input-bordered input-sm mr-5 bg-gray-100"/>
+                        <input type="text" placeholder="Search"
+                               className="input input-bordered input-sm mr-5 bg-gray-100"/>
                         <span
                             className={"absolute right-4 px-2 cursor-pointer text-2xl z-10 text-gray-500 hover:text-gray-600"}>
                             <IoMdSearch/>
@@ -104,16 +107,28 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                            className="menu text-white font-poppins
+                             bg-black/30  dropdown-content rounded-box z-10 mt-3 w-52 p-2 shadow backdrop-blur-md"
                         >
                             <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
+                                <a className="justify-between w-full">
+                                    <span
+                                        className={"flex gap-x-2 items-center"}><FaRegUser/> <span>Profile</span></span>
+
+                                    <span className="badge bg-red-500 text-white">New</span>
                                 </a>
                             </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            <li><a
+                                className="justify-start gap-x-2 w-full items-center"><span><FaShoppingBag/></span><span>My order</span></a>
+                            </li>
+                            <li><a
+                                className="justify-start gap-x-2 w-full items-center"><span><BiCollection/></span><span>Collections</span></a>
+                            </li><li><a
+                                className="justify-start gap-x-2 w-full items-center"><span><FiStar/></span><span>My Review</span></a>
+                            </li>
+                            <li><a
+                                className="justify-start gap-x-2 w-full items-center"><span><CgLogOut  /></span><span>Log out</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -122,4 +137,4 @@ const Navbar = () => {
     );
 };
 
-export default React.memo(Navbar) || Navbar;
+export default React.memo(Navbar);
