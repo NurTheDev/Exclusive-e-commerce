@@ -71,7 +71,7 @@
         @apply text-4xl leading-6 font-inter font-bold;
     }
     .xl-heading-semi-bold {
-        @apply text-5xl leading-6 font-inter font-semibold;
+        @apply text-4xl lg:text-5xl leading-6 font-inter font-semibold;
     }
 
 }
