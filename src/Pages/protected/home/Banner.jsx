@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
-import menuItems from '../../../data/menuItem.js';
+import {menuItems, bannerData} from '../../../data/data.js';
 import {MdArrowForwardIos} from "react-icons/md";
+import Slider from "react-slick";
 
 const Banner = () => {
     const [openIndex, setOpenIndex] = useState(null)
     const toggle = (index) => {
         setOpenIndex(openIndex === index ? null : index);
+    };
+    // slider settings
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     };
     return (
         <div className={"container mx-auto"}>
@@ -39,7 +48,19 @@ const Banner = () => {
                 </ul>
                 {/*Menu bar start*/}
             {/*    Carousel Image start*/}
-
+                <div className="slider-container">
+                    <div>
+                        <Slider {...settings}>
+                            <div >
+                                {bannerData.map((item, index) => (
+                                    <div key={index} >
+                                        <img src={item.image} alt={item.name} />
+                                    </div>
+                                ))}
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
                 {/*    Carousel Image end*/}
             </div>
         </div>
