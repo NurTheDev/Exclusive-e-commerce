@@ -1,6 +1,6 @@
-
 @import "tailwindcss";
 @import "flowbite/src/themes/default.css";
+
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 @plugin "daisyui";
@@ -15,16 +15,15 @@
     --text: #FAFAFA;
     --text1: #7D8184;
     --button: #00FF66;
-    --button1: #DB4444;
-    --button1-hover: #E07575;
     --button2: #E07575;
     --button2-hover: #A0BCE0;
     --gold: #FFAD33;
-    --transparent: rgba(0,0,0,0.04);
-/*    font section*/
+    --transparent: rgba(0, 0, 0, 0.04);
+    /*    font section*/
     --inter: 'Inter', sans-serif;
     --poppins: 'Poppins', sans-serif;
 }
+
 @theme {
     --color-primary: var(--primary);
     --color-secondary: var(--secondary);
@@ -33,8 +32,6 @@
     --color-text: var(--text);
     --color-text1: var(--text1);
     --color-button: var(--button);
-    --color-button1: var(--button1);
-    --color-button1-hover: var(--button1-hover);
     --color-button2: var(--button2);
     --color-button2-hover: var(--button2-hover);
     --color-gold: var(--gold);
@@ -42,36 +39,53 @@
     --font-inter: var(--inter);
     --font-poppins: var(--poppins);
 }
-@layer components{
+@layer components {
     .small-text {
         @apply text-xs lg:text-sm leading-6 font-poppins;
     }
+
     .small-text-medium {
         @apply text-xs lg:text-sm leading-6 font-poppins font-medium;
     }
+
     .normal-text {
         @apply text-base leading-6 font-poppins;
     }
+
     .normal-text-medium {
         @apply text-base leading-6 font-poppins font-medium;
     }
+
     .normal-text-semi-bold {
         @apply text-base leading-6 font-poppins font-semibold;
     }
+
     .small-heading-medium {
         @apply text-xl leading-6 font-poppins font-medium;
     }
+
     .small-heading-semi-bold {
         @apply text-xl leading-6 font-poppins font-semibold;
     }
+
     .medium-heading {
         @apply text-2xl leading-6 font-inter font-bold;
     }
+
     .large-heading-bold {
         @apply text-4xl leading-6 font-inter font-bold;
     }
+
     .xl-heading-semi-bold {
         @apply text-4xl lg:text-5xl leading-6 font-inter font-semibold;
     }
 
+    .title {
+        @apply text-secondary2 relative ml-10 lg:ml-0;
+    }
+    .title::after {
+        content: '';
+
+        @apply block w-5 h-10 bg-secondary2 absolute top-[-10px] left-[-30px] rounded-md;
+    }
 }

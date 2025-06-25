@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {menuItems, bannerData} from '../../../data/data.js';
+import {menuItems, bannerData} from '../../../../data/data.js';
 import {MdArrowForwardIos} from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {getBannerImg, getSettings} from "../../../utils/index.js";
+import {getBannerImg, getSettings} from "../../../../utils/index.js";
 const Banner = () => {
     const [openIndex, setOpenIndex] = useState(null)
     const toggle = (index) => {
