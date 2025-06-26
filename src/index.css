@@ -72,8 +72,12 @@
         @apply text-2xl leading-6 font-inter font-bold;
     }
 
+    .large-heading-semi-bold {
+        @apply text-3xl lg:text-4xl  leading-6 font-inter font-bold;
+    }
+
     .large-heading-bold {
-        @apply text-4xl leading-6 font-inter font-bold;
+        @apply text-3xl lg:text-4xl  leading-6 font-inter font-bold;
     }
 
     .xl-heading-semi-bold {
@@ -81,8 +85,9 @@
     }
 
     .title {
-        @apply text-secondary2 relative ml-10 lg:ml-0;
+        @apply text-secondary2 relative ml-8 ;
     }
+
     .title::after {
         content: '';
 

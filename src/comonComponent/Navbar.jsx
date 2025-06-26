@@ -44,21 +44,34 @@ const Navbar = () => {
 
                 {/* Desktop menu */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-base transition duration-300 ease-in-out">
-                        <li className="hover:border-b-2 hover:border-gray-500">
-                            <a className="hover:text-gray-900">Home</a>
+                    <ul className="menu menu-horizontal px-1 text-base">
+                        <li className="relative group">
+                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                                Home
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                            </a>
                         </li>
-                        <li className="hover:border-b-2 hover:border-gray-500">
-                            <a className="hover:text-gray-900">Contact</a>
+                        <li className="relative group">
+                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                                Contact
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                            </a>
                         </li>
-                        <li className="hover:border-b-2 hover:border-gray-500">
-                            <a className="hover:text-gray-900">About</a>
+                        <li className="relative group">
+                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                                About
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                            </a>
                         </li>
-                        <li className="hover:border-b-2 hover:border-gray-500">
-                            <a className="hover:text-gray-900">Sign Out</a>
+                        <li className="relative group">
+                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                                Sign Out
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2    transition-all duration-300 ease-out group-hover:w-full"></span>
+                            </a>
                         </li>
                     </ul>
                 </div>
+
                 {/* Cart + Avatar (end) */}
                 <div className="navbar-end flex-none">
                     <div className={"relative items-center mr-5 hidden lg:flex"}>
