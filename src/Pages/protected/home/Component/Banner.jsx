@@ -71,4 +71,4 @@ const settings = getSettings()
     );
 };
 
-export default Banner;
+export default React.memo(Banner);

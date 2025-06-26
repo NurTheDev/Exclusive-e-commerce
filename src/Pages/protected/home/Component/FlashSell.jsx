@@ -84,4 +84,4 @@ const FlashSell = () => {
     </div>);
 };
 
-export default FlashSell;
+export default React.memo(FlashSell);
