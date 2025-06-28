@@ -12,6 +12,7 @@ const Navbar = () => {
         <>
             <div>
                 <Status/>
+
             </div>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
@@ -41,7 +42,6 @@ const Navbar = () => {
                     </div>
                     <a className="cursor-pointer medium-heading ">Exclusive</a>
                 </div>
-
                 {/* Desktop menu */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-base">

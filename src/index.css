@@ -25,8 +25,8 @@
 }
 
 @theme {
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
+    --color-primaryColor: var(--primary);
+    --color-secondaryColor: var(--secondary);
     --color-secondary1: var(--secondary1);
     --color-secondary2: var(--secondary2);
     --color-text: var(--text);
@@ -41,47 +41,47 @@
 }
 @layer components {
     .small-text {
-        @apply text-xs lg:text-sm leading-6 font-poppins;
+        @apply text-xs lg:text-sm font-poppins;
     }
 
     .small-text-medium {
-        @apply text-xs lg:text-sm leading-6 font-poppins font-medium;
+        @apply text-xs lg:text-sm font-poppins font-medium;
     }
 
     .normal-text {
-        @apply text-base leading-6 font-poppins;
+        @apply text-base  font-poppins;
     }
 
     .normal-text-medium {
-        @apply text-base leading-6 font-poppins font-medium;
+        @apply text-base  font-poppins font-medium;
     }
 
     .normal-text-semi-bold {
-        @apply text-base leading-6 font-poppins font-semibold;
+        @apply text-base  font-poppins font-semibold;
     }
 
     .small-heading-medium {
-        @apply text-xl leading-6 font-poppins font-medium;
+        @apply text-xl  font-poppins font-medium;
     }
 
     .small-heading-semi-bold {
-        @apply text-xl leading-6 font-poppins font-semibold;
+        @apply text-xl  font-poppins font-semibold;
     }
 
     .medium-heading {
-        @apply text-2xl leading-6 font-inter font-bold;
+        @apply text-2xl  font-inter font-bold;
     }
 
     .large-heading-semi-bold {
-        @apply text-3xl lg:text-4xl  leading-6 font-inter font-bold;
+        @apply text-3xl lg:text-4xl   font-inter font-bold;
     }
 
     .large-heading-bold {
-        @apply text-3xl lg:text-4xl  leading-6 font-inter font-bold;
+        @apply text-3xl lg:text-4xl   font-inter font-bold;
     }
 
     .xl-heading-semi-bold {
-        @apply text-4xl lg:text-5xl leading-6 font-inter font-semibold;
+        @apply text-4xl lg:text-5xl font-inter font-semibold;
     }
 
     .title {

@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import ProductCard from "../../../../comonComponent/ProductCard.jsx";
+import Carousel from "daisyui/components/carousel/index.js";
+import CustomCarousel from "../../../../comonComponent/CustomCarousel.jsx";
 
 const FlashSell = () => {
 // Initialize countdown timer with 3 days in milliseconds
@@ -80,6 +83,9 @@ const FlashSell = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className={"mt-10"}>
+            <CustomCarousel/>
         </div>
     </div>);
 };

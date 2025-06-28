@@ -1,9 +1,10 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from "react-router";
-import Index from "./Pages/protected/Index.jsx";
 import Login from "./Pages/Login.jsx";
 import Loading from "./comonComponent/Loading.jsx";
-import Home from "./Pages/protected/home/Home.jsx";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const App = () => {
     const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
     const Index = lazy(() => import("./Pages/protected/Index.jsx"));

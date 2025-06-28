@@ -26,8 +26,28 @@
     font-weight: 500;
     letter-spacing: 0.05em;
 }
-/*.slick-track{*/
-/*    display: flex !important;*/
-/*    transform: translate3d(0px, 0px, 0px) !important;*/
-/*    !*width: 100% !important;*!*/
+.slick-arrow {
+    width: 30px !important;
+    height: 30px !important;
+    background: var(--secondary) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+/*.slick-prev {*/
+/*    top: -60px !important;*/
+/*    right: 20px !important;*/
+/*    left: auto !important;*/
+/*}*/
+/*.slick-next {*/
+/*    top: -60px !important;*/
+/*}*/
+/*.slick-next:before {*/
+/*    content: "" !important;*/
+/*    width: 16px !important;*/
+/*    height: 16px !important;*/
+/*    background: url("../src/assets/nextArrow.png") no-repeat center !important;*/
+/*    background-size: 16px 16px !important;*/
+/*    color: transparent !important;*/
 /*}*/

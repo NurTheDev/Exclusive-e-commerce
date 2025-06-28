@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {menuItems, bannerData} from '../../../../data/data.js';
 import {MdArrowForwardIos} from "react-icons/md";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import {getBannerImg, getSettings} from "../../../../utils/index.js";
 const Banner = () => {
     const [openIndex, setOpenIndex] = useState(null)
@@ -11,13 +9,13 @@ const Banner = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
     // slider settings
-const settings = getSettings()
+const settings = getSettings("banner")
     return (
         <div className={"container mx-auto"}>
             <div >
                 <div className={"lg:grid grid-cols-4"}>
                     {/*Menu bar start*/}
-                    <ul className={"menu rounded-box w-56 font-poppins w-full"}>
+                    <ul className={"menu rounded-box w-full font-poppins"}>
                         {menuItems.map((item, index) => (
                             <li key={index}>
                                 <button
@@ -44,7 +42,7 @@ const settings = getSettings()
                         ))}
                     </ul>
                     {/*Menu bar start*/}
-                    {/*    Carousel Image start*/}
+                    {/*    CustomCarousel Image start*/}
                     <div className={"col-span-3 px-2 lg:px-0"}>
                         <div className="slider-container">
                             <Slider {...settings}>
@@ -64,7 +62,7 @@ const settings = getSettings()
                             </Slider>
                         </div>
                     </div>
-                    {/*    Carousel Image end*/}
+                    {/*    CustomCarousel Image end*/}
                 </div>
             </div>
         </div>
