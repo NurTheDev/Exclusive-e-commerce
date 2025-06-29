@@ -1,5 +1,5 @@
 import React from "react";
-import CustomCarousel from "./CustomCarousel.jsx";
+import CustomCarousel from "../helper/CustomCarousel.jsx";
 import Timer from "../helper/Timer.jsx";
 
 const Heading = (props) => {

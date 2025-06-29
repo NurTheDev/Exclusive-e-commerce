@@ -16,5 +16,13 @@ const bannerData = [
     { id: 4, name: "Quality Camera", image: "camera.webp", voucher: "30%" },
     { id: 5, name: "Best Cosmetics", image: "cosmatic.webp", voucher: "50%" },
     ]
-export {menuItems, bannerData}
+const categories = [
+    { id: 1, name: "Phones", image: "mobile.svg" },
+    { id: 2, name: "Computers", image: "Computer.svg" },
+    { id: 3, name: "Smart Watch", image: "SmartWatch.svg" },
+    { id: 4, name: "Camera", image: "Camera.svg" },
+    { id: 5, name: "Headphones", image: "Headphone.svg" },
+    { id: 6, name: "Gaming", image: "Gamepad.svg" },
+]
+export {menuItems, bannerData, categories}
 

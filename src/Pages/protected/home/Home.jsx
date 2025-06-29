@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from "./Component/Banner.jsx";
 import FlashSell from "./Component/FlashSell.jsx";
+import CatagoryProduct from "./Component/CatagoryProduct.jsx";
 
 const Home = () => {
     return (
@@ -9,8 +10,12 @@ const Home = () => {
             <div className={"lg:mt-32 mt-10"}>
                 <FlashSell/>
             </div>
+            <div className={"lg:mt-32 mt-10"}>
+                <CatagoryProduct/>
+
+            </div>
         </div>
     );
 };
 
-export default React.memo(Home) || Home;
+export default React.memo(Home);

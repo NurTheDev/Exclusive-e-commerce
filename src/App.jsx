@@ -1,7 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from "react-router";
 import Login from "./Pages/Login.jsx";
-import Loading from "./comonComponent/Loading.jsx";
+import Loading from "./helper/Loading.jsx";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
