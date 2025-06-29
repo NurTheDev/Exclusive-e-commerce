@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import {getSettings} from "../utils/index.js";
 import ProductCard from "../comonComponent/ProductCard.jsx";
 import ArrowGroup from "./ArrowGroup.jsx";
+import CategoryCard from "../comonComponent/CategoryCard.jsx";
 const CustomCarousel = (props) => {
-    console.log(props.data)
+    const categories = props.categories || [];
     const sliderRef = useRef(null);
     const settings = getSettings("product");
     return (
@@ -14,9 +15,9 @@ const CustomCarousel = (props) => {
                 " z-10"} />}
             <div>
                 <Slider ref={sliderRef} {...settings}>
-                    {Array.from({length: props.data?.length || 10}).map((_, index) =>(
+                    {Array.from({length: props.categories?.length || 10}).map((_, index) =>(
                         <div key={index} className="px-2 lg:px-0 !flex !justify-center !items-center">
-                            {props.children}
+                            {props.type === "product" ? <ProductCard /> : <CategoryCard data={props.categories}/>}
                         </div>
                     ))}
                 </Slider>
