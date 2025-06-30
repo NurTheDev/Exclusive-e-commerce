@@ -5,7 +5,7 @@ import {GoEye} from "react-icons/go";
 import Button from "./Button.jsx";
 const ProductCard = ({product}) => {
     return (
-        <div className={"max-w-2xs relative group"}>
+        <div className={"relative group"}>
             <div className={"relative"}>
                 <div className={"p-12 bg-secondaryColor "}>
                     <img src={joystick || ""} alt="" />

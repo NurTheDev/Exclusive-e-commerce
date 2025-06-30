@@ -11,9 +11,9 @@ const CustomCarousel = (props) => {
                 " right-0" +
                 " z-10"} />}
             <div>
-                <Slider ref={sliderRef} {...props.settings} className={"bg-red-200"}>
+                <Slider ref={sliderRef} {...props.settings}>
                     {props.data?.map((item, index) =>(
-                        <div key={index} className="px-2 lg:px-0 !flex !justify-center !items-center">
+                        <div key={index} className="px-2 lg:px-4 !flex !justify-center !items-center">
                             {props.type === "product" ? <ProductCard product={item}/> : <CategoryCard data={item}/>}
                         </div>
                     ))}
