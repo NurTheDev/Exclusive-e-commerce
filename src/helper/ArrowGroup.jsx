@@ -1,7 +1,7 @@
 import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
-const ArrowGroup = ({ref}) => {
+const ArrowGroup = ({ref, className}) => {
     return (
-        <div className="absolute lg:-top-16 top-1/2 flex justify-between lg:justify-end w-full gap-2 z-10 ">
+        <div className={`flex justify-between lg:justify-end w-full gap-2 z-10 ${className}`}>
             <button
                 onClick={() => ref.current?.slickPrev()}
                 className="btn btn-circle  bg-secondaryColor hover:scale-105 hover:shadow-md  transition-colors text-lg"

@@ -1,18 +1,19 @@
 import React from 'react';
 import Heading from "../../../../comonComponent/Heading.jsx";
+import {product} from "../../../../data/data.js";
 import CustomCarousel from "../../../../helper/CustomCarousel.jsx";
-import {categories} from "../../../../data/data.js";
 import {getSettings} from "../../../../utils/index.js";
-const CatagoryProduct = () => {
-    const settings = getSettings("category");
+
+const BestSell = () => {
+    const settings = getSettings("product");
     return (
         <div className={"container mx-auto"}>
-            <Heading heading={"Browse By Category"} title={"Categories"}/>
+            <Heading heading={"Best Selling Products"} title={"This Month"}/>
             <div className={"mt-10"}>
-                <CustomCarousel data={categories} settings={settings} button={"arrows"}/>
+            <CustomCarousel button={"button"} type={"product"} data={product} settings={settings}/>
             </div>
         </div>
     );
 };
 
-export default CatagoryProduct;
+export default BestSell;

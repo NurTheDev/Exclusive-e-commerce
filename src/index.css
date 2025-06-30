@@ -49,7 +49,7 @@
     }
 
     .normal-text {
-        @apply text-base  font-poppins;
+        @apply text-base font-poppins;
     }
 
     .normal-text-medium {
@@ -73,11 +73,11 @@
     }
 
     .large-heading-semi-bold {
-        @apply text-3xl lg:text-4xl   font-inter font-bold;
+        @apply text-3xl lg:text-4xl font-inter font-bold;
     }
 
     .large-heading-bold {
-        @apply text-3xl lg:text-4xl   font-inter font-bold;
+        @apply text-3xl lg:text-4xl font-inter font-bold;
     }
 
     .xl-heading-semi-bold {

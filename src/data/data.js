@@ -19,7 +19,7 @@ const bannerData = [{id: 1, name: "iphone 16 pro max", image: "mobile.png", vouc
 }, {id: 3, name: "Fashionable ladies bag", image: "bag.webp", voucher: "10%"}, {
     id: 4,
     name: "Quality Camera",
-    image: "camera.webp",
+    image: "camera.jpg",
     voucher: "30%"
 }, {id: 5, name: "Best Cosmetics", image: "cosmatic.webp", voucher: "50%"},]
 const categories = [{id: 1, name: "Phones", image: "mobile.svg"}, {
@@ -48,5 +48,25 @@ const product = [{id: 1, name: "HAVIT HV-G92 Gamepad", price: 120}, {
     name: "HAVIT HV-G92 Gamepad",
     price: 120
 }, {id: 1, name: "HAVIT HV-G92 Gamepad", price: 120},]
-export {menuItems, bannerData, categories, product}
+const offerData = [
+    {id: 1, title: "Enhance Your Mobile Experience", image: "mobile.png"},
+    {
+        id: 2,
+        title: "Enhance Your Time Experience",
+        image: "watch.jpg"
+    },
+    {id: 3, title: "Enhance Your Fashion Experience", image: "bag.webp"},
+    {
+        id: 4,
+        title: "Enhance Your Photography Experience",
+        image: "camera.jpg",
+        voucher: "30%"
+    },
+    {id: 5, title: "Enhance Your Beauty Experience", image: "cosmatic.webp"},
+    {
+        id: 6,
+        title: "Enhance Your Music Experience",
+        image: "speaker.png",
 
+    }]
+export {menuItems, bannerData, categories, product, offerData}
