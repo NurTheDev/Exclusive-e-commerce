@@ -1,43 +1,24 @@
-import React, {useState} from 'react';
-import {menuItems, bannerData} from '../../../../data/data.js';
+import React from "react";
 import {MdArrowForwardIos} from "react-icons/md";
 import Slider from "react-slick";
 import {getBannerImg, getSettings} from "../../../../utils/index.js";
+import {useGetProductCategoriesListQuery} from "../../../../features/API/productAPI.js";
+import {bannerData} from "../../../../data/data.js";
 const Banner = () => {
-    const [openIndex, setOpenIndex] = useState(null)
-    const toggle = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-    // slider settings
 const settings = getSettings("banner")
+    const {data} = useGetProductCategoriesListQuery()
+    console.log(data)
     return (
         <div className={"container mx-auto"}>
             <div >
                 <div className={"lg:grid grid-cols-4"}>
                     {/*Menu bar start*/}
                     <ul className={"menu rounded-box w-full font-poppins"}>
-                        {menuItems.map((item, index) => (
+                        {data?.map((item, index) => (
                             <li key={index}>
-                                <button
-                                    className="w-full flex items-center justify-between text-left font-medium"
-                                    onClick={() => toggle(index)}
-                                >
-                                    <span>{item.title}</span>
-                                    <MdArrowForwardIos
-                                        className={`w-4 h-4 transition-transform duration-200 ${
-                                            openIndex === index ? "rotate-90" : ""
-                                        }`}
-                                    />
-                                </button>
-                                {openIndex === index && (
-                                    <ul className="pl-4">
-                                        {item.children.map((child, childIndex) => (
-                                            <li key={childIndex}>
-                                                <a>{child}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
+                                <a className="w-full text-left font-medium text-black">
+                                    {item}
+                                </a>
                             </li>
                         ))}
                     </ul>

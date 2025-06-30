@@ -1,5 +1,6 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import {product} from "../../data/data.js";
 
 // Define a service using a base URL and expected endpoints
 export const productAPI = createApi({
@@ -12,9 +13,12 @@ export const productAPI = createApi({
         GetProductByCategory: builder.query({
             query: (category) => category ? `products/category/${category}` : 'products/categories',
         }),
+        GetProductCategoriesList: builder.query({
+            query: ()=> "products/category-list",
+        })
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductQuery, useGetProductByCategoryQuery } = productAPI
+export const { useGetProductQuery, useGetProductByCategoryQuery, useGetProductCategoriesListQuery } = productAPI

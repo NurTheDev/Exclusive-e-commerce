@@ -4,6 +4,9 @@ const getBannerImg = (name)=>{
 const getCategoryImg = (name)=>{
     return new URL(`../assets/${name}`, import.meta.url).href
 }
+const getDiscountPrice=(price, discount)=>{
+    return Math.round(price - (price * (discount / 100)))
+}
 const settings = {
 
     infinite: true,
@@ -11,7 +14,7 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
 };
-export {getBannerImg, getSettings, getCategoryImg}
+
 const getSettings = (component) => {
     if(component === "banner") {
         return {
@@ -19,7 +22,15 @@ const getSettings = (component) => {
             arrows: false,
             autoplay: true,
             dots: true,
-        }} else if(component === "product") {
+        }} else if(component === "offer") {
+        return {
+            ...settings,
+            arrows: false,
+            autoplay: true,
+            dots: false,
+        }
+    }
+    else if(component === "product") {
         return {
             ...settings,
             arrows: false,
@@ -92,3 +103,4 @@ const getSettings = (component) => {
         }
     }
 }
+export {getBannerImg, getSettings, getCategoryImg, getDiscountPrice}
