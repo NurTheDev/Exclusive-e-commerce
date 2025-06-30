@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-const Timer = ({className, active}) => {
+const Timer = ({className, active, time}) => {
     // Initialize countdown timer with 3 days in milliseconds
-    const [count, setCount] = useState(3 * 24 * 60 * 60 * 1000);
+    const [count, setCount] = useState(time * 24 * 60 * 60 * 1000 || 0);
 // Set up web worker for countdown timer to prevent blocking main thread
     useEffect(() => {
         let worker
@@ -43,7 +43,7 @@ const Timer = ({className, active}) => {
         <div className={`grid grid-flow-col gap-1 lg:gap-3 text-center items-center auto-cols-max ${className}`}>
             <div className={`flex flex-col p-2 w-14 h-14 justify-center items-center rounded-full bg-white text-black ${active ? "text-xs" : ""}`}>
                 days
-                <span className={`countdown mt-2 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
+                <span className={`countdown mt-1 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
       <span style={{"--value": day}} aria-live="polite" aria-label={day}></span>
     </span>
             </div>
@@ -51,21 +51,21 @@ const Timer = ({className, active}) => {
             <div className={`flex flex-col p-2 w-14 h-14 justify-center items-center rounded-full bg-white text-black ${active ? "text-xs" : ""}`}>
                 hours
 
-                <span className={`countdown mt-2 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
+                <span className={`countdown mt-1 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
       <span style={{"--value": hours}} aria-live="polite" aria-label={hours}>10</span>
     </span>
             </div>
             {!active && <span className="countdown large-heading-bold mt-3">:</span>}
             <div className={`flex flex-col p-2 w-14 h-14 justify-center items-center rounded-full bg-white text-black ${active ? "text-xs" : ""}`}>
                 min
-                <span className={`countdown mt-2 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
+                <span className={`countdown mt-1 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
       <span style={{"--value": minutes}} aria-live="polite"></span>
     </span>
             </div>
             {!active && <span className="countdown large-heading-bold mt-3">:</span>}
             <div className={`flex flex-col p-2 w-14 h-14 justify-center items-center rounded-full bg-white text-black ${active ? "text-xs" : ""}`}>
                 sec
-                <span className={`countdown mt-2 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
+                <span className={`countdown mt-1 ${active ? "small-heading-semi-bold" : "large-heading-bold"}`}>
 
       <span style={{"--value": seconds}} aria-live="polite"></span>
     </span>

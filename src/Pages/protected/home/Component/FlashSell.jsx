@@ -12,7 +12,7 @@ const FlashSell = () => {
         <div className={"container mx-auto"}>
             <div className={"flex justify-start items-end px-3 lg:px-0"}>
                 <Heading heading={"Flash Sales"} title={"Today’s"} timer={true} />
-                <Timer className={"ml-5 lg:ml-20"}/>
+                <Timer className={"ml-5 lg:ml-20"} time={3}/>
             </div>
             <div className={"mt-10"}>
                 <CustomCarousel button={"arrows"} type={"product"} data={product} settings={settings}/>

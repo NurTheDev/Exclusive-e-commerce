@@ -21,7 +21,7 @@ const Offer = () => {
                                     " justify-center gap-y-10 items-start"}>
                                     <p className={"text-button normal-text-semi-bold"}>Categories</p>
                                     <h2 className={"text-white xl-heading-semi-bold"}>{item.title}</h2>
-                                    <Timer className={"text-white"} active={true}/>
+                                    <Timer className={"text-white"} active={true} time={1}/>
                                     <Button btnText={"Buy Now"} className={"bg-button text-white px-12 mt-10"}/>
                                 </div>
                                 <img src={getBannerImg(item.image)} alt={item.name} className="lg:w-2/3 object-cover"/>
