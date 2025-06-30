@@ -85,7 +85,7 @@
     }
 
     .title {
-        @apply text-secondary2 relative ml-8 ;
+        @apply text-secondary2 relative  ;
     }
 
     .title::after {

@@ -21,8 +21,8 @@ const ProductCard = ({product}) => {
                             " rounded-full"}><GoEye /></span>
                     </div>
                 </div>
-                <Button className={"bg-black group-hover:opacity-100 opacity-0 transition-all duration-200" +
-                    " text-white absolute border-none" +
+                <Button className={"bg-black group-hover:opacity-100 opacity-0" +
+                    " text-white absolute" +
                     " bottom-0" +
                     " left-0" +
                     " w-full"} btnText={"Add" +

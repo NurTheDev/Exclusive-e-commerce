@@ -22,11 +22,7 @@ const Offer = () => {
                                     <p className={"text-button normal-text-semi-bold"}>Categories</p>
                                     <h2 className={"text-white xl-heading-semi-bold"}>{item.title}</h2>
                                     <Timer className={"text-white"} active={true}/>
-                                    <Button btnText={"Buy Now"} className={"bg-button border-none transition-all" +
-                                        " duration-200 hover:scale-105" +
-                                        " text-white" +
-                                        " py-4" +
-                                        " px-12 mt-10"}/>
+                                    <Button btnText={"Buy Now"} className={"bg-button text-white px-12 mt-10"}/>
                                 </div>
                                 <img src={getBannerImg(item.image)} alt={item.name} className="lg:w-2/3 object-cover"/>
                             </div>

@@ -8,11 +8,9 @@ const CustomCarousel = (props) => {
     const sliderRef = useRef(null);
     return (
         <div className={"container mx-auto relative"}>
-            {props.button === "arrows" ? <ArrowGroup ref={sliderRef} className={"absolute top-1/2 lg:-top-[70px]" +
+            {props.button === "arrows" && <ArrowGroup ref={sliderRef} className={"absolute top-1/2 lg:-top-[70px]" +
                 " right-0" +
-                " z-10"} /> : <Button btnText={"View All"} className={"bg-secondary2 hover:scale-105 text-white py-4 px-4" +
-                " mt-10" +
-                " absolute lg:-top-[100px] -bottom-[80px] right-1/2 translate-x-1/2 lg:right-20 z-10"}/>}
+                " z-10"} /> }
             <div>
                 <Slider ref={sliderRef} {...props.settings}>
                     {props.data?.map((item, index) =>(

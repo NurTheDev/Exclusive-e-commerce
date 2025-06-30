@@ -4,6 +4,7 @@ import FlashSell from "./Component/FlashSell.jsx";
 import CatagoryProduct from "./Component/CatagoryProduct.jsx";
 import BestSell from "./Component/BestSell.jsx";
 import Offer from "./Component/Offer.jsx";
+import ExploreProduct from "./Component/ExploreProduct.jsx";
 
 const Home = () => {
     return (
@@ -16,11 +17,14 @@ const Home = () => {
                 <CatagoryProduct/>
             </div>
             <div className={"lg:mt-32 mt-10"}>
-                {/* BestSell component can be added here if needed */}
+
                  <BestSell/>
             </div>
             <div className={"lg:mt-32 mt-10"}>
                 <Offer/>
+            </div>
+            <div className={"lg:mt-32 mt-10"}>
+                <ExploreProduct/>
             </div>
         </div>
     );
