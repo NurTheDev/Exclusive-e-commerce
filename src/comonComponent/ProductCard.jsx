@@ -3,7 +3,7 @@ import joystick from "../assets/joystick.png";
 import {FaRegHeart} from "react-icons/fa";
 import {GoEye} from "react-icons/go";
 import Button from "./Button.jsx";
-const ProductCard = () => {
+const ProductCard = ({product}) => {
     return (
         <div className={"max-w-2xs relative group"}>
             <div className={"relative"}>
@@ -29,7 +29,7 @@ const ProductCard = () => {
                     " to Cart"} />
             </div>
             <div className={"flex flex-col justify-between gap-2 font-poppins bg-white"}>
-                <h3 className={"text-lg mt-4 normal-text-medium"}>HAVIT HV-G92 Gamepad</h3>
+                <h3 className={"text-lg mt-4 normal-text-medium"}>{product.name}</h3>
                 <div>
                     <span className={"text-lg normal-text-medium "}>$ 20.00</span>
                     <span className={"text-gray-500 line-through ml-2"}>$ 30.00</span>
