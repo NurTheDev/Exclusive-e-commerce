@@ -41,17 +41,20 @@ const Banner = () => {
                                 </button>
                             </li>
                         ))}
-                        <li>
-                            <button
-                                className="w-full flex items-center justify-between bg-secondary2 text-white text-left font-medium p-3 hover:bg-gray-100 hover:text-black rounded-lg transition-colors duration-200"
-                                onClick={handleLoadMore}
-                            >
-                                <span className={"capitalize"}>More Categories</span>
-                                <MdArrowForwardIos
-                                    className={`w-4 h-4 transition-transform duration-200`}
-                                />
-                            </button>
-                        </li>
+                        {dataList.length < data?.length && (
+                            <li>
+                                <button
+                                    className="w-full flex items-center justify-between bg-secondary2 text-white text-left font-medium p-3 hover:bg-gray-100 hover:text-black rounded-lg transition-colors duration-200"
+                                    onClick={handleLoadMore}
+                                >
+                                    <span className={"capitalize"}>More Categories</span>
+                                    <MdArrowForwardIos
+                                        className={`w-4 h-4 transition-transform duration-200`}
+                                    />
+                                </button>
+                            </li>
+                        )
+                        }
                     </ul>
                     {/*Menu bar start*/}
                     {/*    CustomCarousel Image start*/}

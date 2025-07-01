@@ -30,8 +30,8 @@ const Offer = () => {
                                        <Timer className={"text-white"} active={true} time={Math.round(item.rating)}/>
                                        <Button btnText={"Buy Now"} className={"bg-button text-white px-12 mt-10"}/>
                                    </div>
-                                   <div className={"lg:w-2/3 h-full flex items-center"}>
-                                       <img src={item.images} alt={item.name} className="w-full object-fit h-full"/>
+                                   <div className={"lg:w-2/3 h-full flex items-center imageDropShadow"}>
+                                       <img src={item.images} alt={item.name} className="w-full object-fit h-full "/>
                                    </div>
                                </div>
                            ))}
