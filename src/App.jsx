@@ -16,11 +16,17 @@ const App = () => {
                 <Route element={<Suspense fallback={<Loading/>}>
                     <Index/>
                 </Suspense>} >
-                    <Route path="/" element={
+                    <Route index element={
                         <Suspense fallback={<Loading/>}>
                             <Home/>
                         </Suspense>
                     } />
+                    <Route path="about" element={
+                        <Suspense fallback={<Loading/>}>
+                            <h1>i am about</h1>
+                        </Suspense>
+                    } />
+                    {/* Add other protected routes here */}
                 </Route>
             </Routes>
         </>

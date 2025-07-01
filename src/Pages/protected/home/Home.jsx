@@ -34,9 +34,6 @@ const Home = () => {
             <div className="mt-6 sm:mt-8 lg:mt-16">
                 <FacilitySection/>
             </div>
-            <div className="mt-6 sm:mt-8 lg:mt-16">
-                <Footer/>
-            </div>
         </div>
     );
 };

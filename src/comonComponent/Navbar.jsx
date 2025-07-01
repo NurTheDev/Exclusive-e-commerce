@@ -6,7 +6,7 @@ import {FaRegHeart, FaRegUser, FaShoppingBag} from "react-icons/fa";
 import {FiShoppingCart, FiStar} from "react-icons/fi";
 import {BiCollection} from "react-icons/bi";
 import {CgLogOut} from "react-icons/cg";
-
+import {NavLink} from "react-router";
 const Navbar = () => {
     return (
         <>
@@ -46,10 +46,10 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-base">
                         <li className="relative group">
-                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                            <NavLink to={"/"} className={`px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative`}>
                                 Home
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="relative group">
                             <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
@@ -58,10 +58,10 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className="relative group">
-                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
+                            <NavLink to={"about"} className={`px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative ${({ isActive }) => (isActive ? '!text-red-500' : '')}`}>
                                 About
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="relative group">
                             <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
