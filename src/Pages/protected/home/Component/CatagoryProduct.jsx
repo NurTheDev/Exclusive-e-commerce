@@ -11,6 +11,8 @@ const CatagoryProduct = () => {
             <div className={"mt-10"}>
                 <CustomCarousel data={categories} settings={settings} button={"arrows"}/>
             </div>
+            <hr className={"mt-10 bg-black/30 opacity-30"}/>
+
         </div>
     );
 };

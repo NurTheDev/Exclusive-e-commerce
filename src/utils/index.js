@@ -1,14 +1,10 @@
-const getBannerImg = (name)=>{
-    return new URL(`../assets/${name}`, import.meta.url).href
-}
-const getCategoryImg = (name)=>{
+const getImgUrl = (name)=>{
     return new URL(`../assets/${name}`, import.meta.url).href
 }
 const getDiscountPrice=(price, discount)=>{
     return Math.round(price - (price * (discount / 100)))
 }
 const settings = {
-
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -102,5 +98,45 @@ const getSettings = (component) => {
             ]
         }
     }
+    else if(component === "exploreProduct") {
+        return {
+            ...settings,
+            arrows: true,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            width: "100%",
+            dots: false,
+            rows: 2,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2,
+                    row: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        row: 1
+                    }
+                }
+            ]
+        }
+    }
 }
-export {getBannerImg, getSettings, getCategoryImg, getDiscountPrice}
+export {getImgUrl, getSettings, getDiscountPrice}

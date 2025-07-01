@@ -69,4 +69,25 @@ const offerData = [
         image: "speaker.png",
 
     }]
-export {menuItems, bannerData, categories, product, offerData}
+const FacilityData = [
+    {
+        id: 1,
+        title: "FREE AND FAST DELIVERY",
+        description: "Free delivery for all orders over $140",
+        image: "bus.png"
+    },
+    {
+        id: 2,
+        title: "24/7 CUSTOMER SERVICE",
+        description: "Friendly 24/7 customer support",
+        image: "call.png"
+    },
+    {
+        id: 4,
+        title: "MONEY BACK GUARANTEE",
+        description: "We return money within 30 days",
+        image: "valid.png"
+    }
+
+]
+export {menuItems, bannerData, categories, product, offerData, FacilityData}

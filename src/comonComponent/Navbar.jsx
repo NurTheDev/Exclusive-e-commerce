@@ -146,6 +146,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            <hr className={"mb-4 bg-black/30 opacity-30"}/>
+
         </>
     );
 };

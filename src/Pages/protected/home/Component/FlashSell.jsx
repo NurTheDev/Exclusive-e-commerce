@@ -21,6 +21,7 @@ const FlashSell = () => {
                     <Button className={"bg-secondary2 text-white px-12 mt-10"} btnText={"View All Products"}/>
                 </div>
             </div>
+            <hr className={"my-10 bg-black/30 opacity-30"}/>
         </div>
     );
 };

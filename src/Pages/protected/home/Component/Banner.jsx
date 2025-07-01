@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {MdArrowForwardIos} from "react-icons/md";
 import Slider from "react-slick";
-import {getBannerImg, getSettings} from "../../../../utils/index.js";
+import {getImgUrl, getSettings} from "../../../../utils/index.js";
 import {useGetProductCategoriesListQuery} from "../../../../features/API/productAPI.js";
 import {bannerData} from "../../../../data/data.js";
 
@@ -26,9 +26,9 @@ const Banner = () => {
     return (
         <div className={"container mx-auto"}>
             <div>
-                <div className={"lg:grid grid-cols-4"}>
+                <div className={"lg:grid grid-cols-4 gap-4 px-3 lg:px-0"}>
                     {/*Menu bar start*/}
-                    <ul className={"menu rounded-box w-full font-poppins"}>
+                    <ul className={"menu w-full font-poppins lg:border-r lg:border-black/30"}>
                         {dataList?.map((item, index) => (
                             <li key={index}>
                                 <button
@@ -63,7 +63,7 @@ const Banner = () => {
                             <Slider {...settings}>
                                 {bannerData.map((item, index) => (
                                     <div key={index}
-                                         className="w-full relative h-[250px] lg:h-[350px] !flex !justify-around bg-black">
+                                         className="w-full relative h-[350px] lg:h-[500px] !flex !justify-around bg-black">
                                         <div className={"absolute p-4 lg:p-10 lg:relative top-0 left-0 w-full h-full" +
                                             " flex" +
                                             " flex-col" +
@@ -73,7 +73,7 @@ const Banner = () => {
                                                 to {item.voucher} off</h2>
                                             <button className={"btn lg:w-1/2"}>Shop Now</button>
                                         </div>
-                                        <img src={getBannerImg(item.image)} alt={item.name}
+                                        <img src={getImgUrl(item.image)} alt={item.name}
                                              className="lg:w-1/2 object-cover"/>
                                     </div>
                                 ))}
