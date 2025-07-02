@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 import Timer from "../../../../helper/Timer.jsx";
 import Button from "../../../../comonComponent/Button.jsx";
-import ErrorComponent from "../../../../comonComponent/ErrorComponent.jsx";
+import ErrorComponent from "../../../../helper/ErrorComponent.jsx";
 import {useGetProductQuery} from "../../../../features/API/productAPI.js";
 import {getSettings} from "../../../../utils/index.js";
 

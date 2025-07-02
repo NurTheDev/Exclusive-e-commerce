@@ -3,7 +3,7 @@ import Heading from "../../../../comonComponent/Heading.jsx";
 import ProductCard from "../../../../comonComponent/ProductCard.jsx";
 import Button from "../../../../comonComponent/Button.jsx";
 import {useGetProductQuery} from "../../../../features/API/productAPI.js";
-import ErrorComponent from "../../../../comonComponent/ErrorComponent.jsx";
+import ErrorComponent from "../../../../helper/ErrorComponent.jsx";
 import CustomCarousel from "../../../../helper/CustomCarousel.jsx";
 import {getSettings} from "../../../../utils/index.js";
 const ExploreProduct = () => {

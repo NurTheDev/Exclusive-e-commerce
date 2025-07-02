@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button.jsx';
+import Button from '../comonComponent/Button.jsx';
 
 const ErrorComponent = ({
     error,

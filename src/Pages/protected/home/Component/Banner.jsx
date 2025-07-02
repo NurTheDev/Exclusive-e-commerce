@@ -4,58 +4,16 @@ import Slider from "react-slick";
 import {getImgUrl, getSettings} from "../../../../utils/index.js";
 import {useGetProductCategoriesListQuery} from "../../../../features/API/productAPI.js";
 import {bannerData} from "../../../../data/data.js";
+import MenuBar from "../../../../comonComponent/MenuBar.jsx";
 
 const Banner = () => {
     const settings = getSettings("banner")
-    const {data} = useGetProductCategoriesListQuery()
-    const [dataList, setDataList] = useState([]);
-    useEffect(() => {
-        let subscribe = false;
-        if (data && !subscribe) {
-            setDataList(data.slice(0, 10));
-        }
-        return () => {
-            subscribe = true; // Cleanup function to avoid memory leaks
-        }
-    }, [data]);
-    const handleLoadMore = () => {
-        if (dataList.length < data?.length) {
-            setDataList(data?.slice(0, dataList.length + 10));
-        }
-    }
     return (
         <div className={"container mx-auto"}>
             <div>
                 <div className={"lg:grid grid-cols-4 gap-4 px-3 lg:px-0"}>
                     {/*Menu bar start*/}
-                    <ul className={"menu w-full font-poppins lg:border-r lg:border-black/30"}>
-                        {dataList?.map((item, index) => (
-                            <li key={index}>
-                                <button
-                                    className="w-full flex items-center justify-between text-left font-medium p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                                >
-                                    <span className={"capitalize"}>{item}</span>
-                                    <MdArrowForwardIos
-                                        className={`w-4 h-4 transition-transform duration-200`}
-                                    />
-                                </button>
-                            </li>
-                        ))}
-                        {dataList.length < data?.length && (
-                            <li>
-                                <button
-                                    className="w-full flex items-center justify-between bg-secondary2 text-white text-left font-medium p-3 hover:bg-gray-100 hover:text-black rounded-lg transition-colors duration-200"
-                                    onClick={handleLoadMore}
-                                >
-                                    <span className={"capitalize"}>More Categories</span>
-                                    <MdArrowForwardIos
-                                        className={`w-4 h-4 transition-transform duration-200`}
-                                    />
-                                </button>
-                            </li>
-                        )
-                        }
-                    </ul>
+                    <MenuBar/>
                     {/*Menu bar start*/}
                     {/*    CustomCarousel Image start*/}
                     <div className={"col-span-3 px-2 lg:px-0"}>

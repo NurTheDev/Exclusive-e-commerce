@@ -47,7 +47,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-base">
                         {NavbarData.map((item, index)=>(
-                            <li className="relative group">
+                            <li key={index} className="relative group">
                                 <NavLink to={item.link} key={index} className={``}>
                                     {({ isActive }) => (
                                         <>

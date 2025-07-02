@@ -2,14 +2,14 @@ import React from 'react';
 import {FaRegHeart} from "react-icons/fa";
 import {GoEye} from "react-icons/go";
 import Button from "./Button.jsx";
-import ProductSkeleton from "../helper/ProductSkeleton.jsx";
+import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import {getDiscountPrice} from "../utils/index.js";
 const ProductCard = ({product = {}, loading, discount}) => {
     return (
         <>
             {!loading ? <div className={"relative group"} key={product.id}>
-                <div className={"relative"}>
+                <div  className={"relative"}>
                     <div className={"p-12 bg-secondaryColor "}>
                         <img src={product.images} alt="" />
                     </div>

@@ -23,7 +23,7 @@ const NotFound = () => {
     const nf_popularCategories = [
         { name: 'Electronics', icon: '📱', path: '/category/electronics' },
         { name: 'Fashion', icon: '👕', path: '/category/fashion' },
-        { name: 'Home & Garden', icon: '🏠', path: '/category/home' },
+        { name: 'Home ', icon: '🏠', path: '/' },
         { name: 'Sports', icon: '⚽', path: '/category/sports' }
     ];
 

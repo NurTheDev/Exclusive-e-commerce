@@ -4,7 +4,7 @@ import ProductCard from "../comonComponent/ProductCard.jsx";
 import ArrowGroup from "./ArrowGroup.jsx";
 import CategoryCard from "../comonComponent/CategoryCard.jsx";
 import Button from "../comonComponent/Button.jsx";
-import ErrorComponent from "../comonComponent/ErrorComponent.jsx";
+import ErrorComponent from "./ErrorComponent.jsx";
 
 const CustomCarousel = (props) => {
     const sliderRef = useRef(null);

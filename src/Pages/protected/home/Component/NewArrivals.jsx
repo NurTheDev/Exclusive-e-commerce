@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetProductByCategoryQuery} from "../../../../features/API/productAPI.js";
 import Loading from "../../../../helper/Loading.jsx";
-import ErrorComponent from "../../../../comonComponent/ErrorComponent.jsx";
+import ErrorComponent from "../../../../helper/ErrorComponent.jsx";
 
 const NewArrivals = () => {
     const {data, error, isLoading} = useGetProductByCategoryQuery("motorcycle");
@@ -80,4 +80,4 @@ const NewArrivals = () => {
     );
 };
 
-export default NewArrivals;
+export default React.memo(NewArrivals);
