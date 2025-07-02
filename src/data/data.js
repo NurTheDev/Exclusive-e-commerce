@@ -90,4 +90,26 @@ const FacilityData = [
     }
 
 ]
-export {menuItems, bannerData, categories, product, offerData, FacilityData}
+const NavbarData = [
+    {
+        id: 1,
+        title: "Home",
+        link: "/"
+    },
+    {
+        id: 2,
+        title: "About",
+        link: "/about"
+    },
+    {
+        id: 3,
+        title: "Contact",
+        link: "/contact"
+    },
+    {
+        id: 4,
+        title: "Sign Out",
+        link: "/signout"
+    }
+]
+export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData}

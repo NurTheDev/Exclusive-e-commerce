@@ -7,6 +7,7 @@ import {FiShoppingCart, FiStar} from "react-icons/fi";
 import {BiCollection} from "react-icons/bi";
 import {CgLogOut} from "react-icons/cg";
 import {NavLink} from "react-router";
+import {NavbarData} from "../data/data.js";
 const Navbar = () => {
     return (
         <>
@@ -45,30 +46,22 @@ const Navbar = () => {
                 {/* Desktop menu */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-base">
-                        <li className="relative group">
-                            <NavLink to={"/"} className={`px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative`}>
-                                Home
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </NavLink>
-                        </li>
-                        <li className="relative group">
-                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
-                                Contact
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </a>
-                        </li>
-                        <li className="relative group">
-                            <NavLink to={"about"} className={`px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative ${({ isActive }) => (isActive ? '!text-red-500' : '')}`}>
-                                About
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </NavLink>
-                        </li>
-                        <li className="relative group">
-                            <a className="px-4 py-2 transition-all duration-300 ease-in-out hover:text-secondary relative">
-                                Sign Out
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2    transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </a>
-                        </li>
+                        {NavbarData.map((item, index)=>(
+                            <li className="relative group">
+                                <NavLink to={item.link} key={index} className={``}>
+                                    {({ isActive }) => (
+                                        <>
+                                            {isActive ? (
+                                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                                            ) : (
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out "></span>
+                                            )}
+                                            <span className="relative">{item.title}</span>
+                                        </>
+                                    )}
+                                </NavLink>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
