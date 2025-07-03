@@ -5,7 +5,7 @@ import {Link} from "react-router";
 import MenuBarSkeleton from "../Skeleton/MenuBarSkeleton.jsx";
 
 const MenuBar = (props) => {
-    const {data, error, isLoading} = useGetProductCategoriesListQuery()
+    const {data, isLoading} = useGetProductCategoriesListQuery()
     const [dataList, setDataList] = useState([]);
     useEffect(() => {
         let subscribe = false;
@@ -28,7 +28,7 @@ const MenuBar = (props) => {
                 <ul className={"menu w-full font-poppins lg:border-r lg:border-black/30"}>
                     {dataList?.map((item, index) => (
                         <li key={index}>
-                            <Link onClick={()=>props.onClick(item)}
+                            <Link onClick={()=> props.onClick(item)}
                                   to={`/category/${item}`}
                                   className="w-full flex items-center justify-between text-left font-medium p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200 capitalize"
                             >

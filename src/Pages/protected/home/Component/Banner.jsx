@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {MdArrowForwardIos} from "react-icons/md";
+import React from 'react';
 import Slider from "react-slick";
 import {getImgUrl, getSettings} from "../../../../utils/index.js";
-import {useGetProductCategoriesListQuery} from "../../../../features/API/productAPI.js";
 import {bannerData} from "../../../../data/data.js";
 import MenuBar from "../../../../comonComponent/MenuBar.jsx";
 

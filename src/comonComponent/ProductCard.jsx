@@ -6,6 +6,7 @@ import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import {getDiscountPrice} from "../utils/index.js";
 const ProductCard = ({product = {}, loading, discount}) => {
+    console.log(product)
     return (
         <>
             {!loading ? <div className={"relative group"} key={product.id}>
