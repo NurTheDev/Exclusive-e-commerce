@@ -4,13 +4,14 @@ import Login from "./Pages/Login.jsx";
 import Loading from "./helper/Loading.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Breadcrumbs from "./comonComponent/Breadcrumbs.jsx";
+import ProductDetails from "./Pages/protected/SingleProductDetails/ProductDetails.jsx";
 
 const App = () => {
     const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
     const Index = lazy(() => import("./Pages/protected/Index.jsx"));
     const NotFound = lazy(() => import("./Pages/Not Found/NotFound.jsx"));
     const Product = lazy(() => import("./Pages/protected/Product/ProductPage.jsx"));
+    const ProductDetails = lazy(() => import("./Pages/protected/SingleProductDetails/ProductDetails.jsx"));
     return (
         <>
             <Routes>
@@ -39,6 +40,7 @@ const App = () => {
                             <Product/>
                         </Suspense>
                     }/>
+                    <Route path={"product/:id"} element={<Suspense fallback={<Loading/>}><ProductDetails/></Suspense>}/>
                     {/* Add other protected routes here */}
                 </Route>
                 <Route path="*" element={

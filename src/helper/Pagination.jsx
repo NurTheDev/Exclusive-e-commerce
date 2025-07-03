@@ -5,7 +5,7 @@ const Pagination = ({setPage, page, totalItems, itemsPerPage }) => {
     return (
         <>
         {totalItems > itemsPerPage && (
-            <div className={`join flex justify-center items-center w-full lg:gap-x-5 gap-x-2`}>
+            <div className={`join flex justify-center items-center w-full lg:gap-x-1 gap-x-1`}>
                 <button
                     className="join-item btn btn-square !px-8"
                     onClick={() => setPage(page - 1)}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = ({btnText, className}) => {
     return (
-        <button className={`btn ${className} border-none transition-all py-4 cursor-pointer hover:scale-105`}>
+        <button className={`btn ${className} border-none transition-all py-4 cursor-pointer hover:scale-95`}>
             {btnText}
             <svg xmlns="http://www.w3.org/2000/svg"
                  className="h-5 w-5 ml-2"

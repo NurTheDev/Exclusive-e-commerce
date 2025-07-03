@@ -5,14 +5,20 @@ import Button from "./Button.jsx";
 import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import {getDiscountPrice} from "../utils/index.js";
+import {useNavigate} from "react-router";
 const ProductCard = ({product = {}, loading, discount}) => {
-    console.log(product)
+    const navigate = useNavigate()
+    const handleProductClick = (product) => {
+        navigate(`/product/${product.id} `, {state: product})
+    }
     return (
         <>
-            {!loading ? <div className={"relative group"} key={product.id}>
-                <div  className={"relative"}>
-                    <div className={"p-12 bg-secondaryColor "}>
-                        <img src={product.images} alt="" />
+            {!loading ? <div onClick={() => handleProductClick(product)} className={"relative group cursor-pointer hover:scale-95 transition-all" +
+                " duration-300" +
+                " hover:shadow-lg"} key={product.id}>
+                <div  className={"relative "}>
+                    <div className={"p-12 bg-secondaryColor overflow-hidden"}>
+                        <img src={product.images} alt="" className={"hover:scale-105 transition-all duration-300"}/>
                     </div>
                     <div className={"flex justify-between items-start absolute w-full p-3 top-0"}>
                         {discount && <span className={"bg-red-500 text-white px-2 py-1 rounded-full"}>{Math.round(product.discountPercentage)}% OFF</span>}
