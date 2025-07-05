@@ -18,7 +18,7 @@
     --button2: #E07575;
     --button2-hover: #A0BCE0;
     --gold: #FFAD33;
-    --transparent: rgba(0, 0, 0, 0.04);
+    --transparent: rgba(0,0,0,0.04);
     /*    font section*/
     --inter: 'Inter', sans-serif;
     --poppins: 'Poppins', sans-serif;
@@ -26,6 +26,7 @@
 
 @theme {
     --color-primaryColor: var(--primary);
+    --color-primary1: var(--primary1);
     --color-secondaryColor: var(--secondary);
     --color-secondary1: var(--secondary1);
     --color-secondary2: var(--secondary2);

@@ -114,7 +114,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu text-white font-poppins
-                             bg-transparent-bg  dropdown-content rounded-box z-10 mt-3 w-52 p-2 shadow backdrop-blur-md"
+                             bg-black/30  dropdown-content rounded-box z-10 mt-3 w-52 p-2 shadow backdrop-blur-md"
                         >
                             <li>
                                 <a className="justify-between w-full">
