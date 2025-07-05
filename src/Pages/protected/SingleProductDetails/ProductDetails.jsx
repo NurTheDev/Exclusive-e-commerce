@@ -7,10 +7,16 @@ import Button from "../../../comonComponent/Button.jsx";
 import {FaRegHeart} from "react-icons/fa";
 import delivery from "../../../assets/delivery.svg"
 import returnImg from "../../../assets/return.svg"
+import Heading from "../../../comonComponent/Heading.jsx";
+import CustomCarousel from "../../../helper/CustomCarousel.jsx";
+import {useGetProductQuery} from "../../../features/API/productAPI.js";
+import {getSettings} from "../../../utils/index.js";
 const ProductDetails = () => {
+    const {data, error, isLoading} = useGetProductQuery()
+    console.log(data)
+    const settings = getSettings("product");
     const location = useLocation()
     const product = location.state
-    console.log(product)
     const [currentImage, setCurrentImage] = useState(product?.images)
     const size = ["xs", "s", "m", "l", "xl"];
     return (
@@ -61,7 +67,7 @@ const ProductDetails = () => {
                             <span className={"small-heading-medium"}>Size:</span>
                             <div className={"flex justify-start items-center gap-3"}>
                                 {size.map((item, index) => (
-                                    <span key={index} className={"border-2 border-black/50 px-2 py-1 rounded-sm" +
+                                    <span key={index} className={"border border-black/50 px-2 py-1 rounded-sm" +
                                         " text-black" +
                                         " cursor-pointer" +
                                     " hover:bg-secondary2 hover:border-secondary2 hover:text-white transition-all" +
@@ -97,6 +103,12 @@ const ProductDetails = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className={"mt-10 lg:mt-16"}>
+                <Heading title={"Related Item"}/>
+                <div>
+                    <CustomCarousel type={"product"} data={data?.products || []} error ={error} settings={settings} loading={isLoading}/>
                 </div>
             </div>
         </div>
