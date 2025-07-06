@@ -9,7 +9,7 @@ import {useNavigate} from "react-router";
 const ProductCard = ({product = {}, loading, discount}) => {
     const navigate = useNavigate()
     const handleProductClick = (product) => {
-        navigate(`/product/${product.id} `, {state: product})
+        navigate(`/product/${product.id} `)
     }
     return (
         <>
