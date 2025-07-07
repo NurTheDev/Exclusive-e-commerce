@@ -6,7 +6,7 @@ import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import {getDiscountPrice} from "../utils/index.js";
 import {useNavigate} from "react-router";
-const ProductCard = ({product = {}, loading, discount}) => {
+const ProductCard = ({product = {}, loading, discount, wishItem}) => {
     const navigate = useNavigate()
     const handleProductClick = (product) => {
         navigate(`/product/${product.id} `)
@@ -23,7 +23,7 @@ const ProductCard = ({product = {}, loading, discount}) => {
                     <div className={"flex justify-between items-start absolute w-full p-3 top-0"}>
                         {discount && <span className={"bg-red-500 text-white px-2 py-1 rounded-full"}>{Math.round(product.discountPercentage)}% OFF</span>}
                         <div className={"text-xl"}>
-                            <span className={"bg-white hover:scale-95 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full mb-3"}><FaRegHeart /></span>
+                            {!wishItem && (<span className={"bg-white hover:scale-95 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full mb-3"}><FaRegHeart /></span>)}
                             <span className={"bg-white hover:scale-95 cursor-pointer  w-10 h-10 flex justify-center" +
                                 " items-center" +
                                 " rounded-full"}><GoEye /></span>
@@ -53,5 +53,5 @@ const ProductCard = ({product = {}, loading, discount}) => {
     );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);
 

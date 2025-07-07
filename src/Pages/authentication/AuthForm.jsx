@@ -78,7 +78,6 @@ const AuthForm = ({
           <span className="text-red-500 font-semibold">Password must contain at least one letter and one number</span>
         )}
       </div>
-
       <button
         type="submit"
         disabled={isLoading}
@@ -90,4 +89,4 @@ const AuthForm = ({
   );
 };
 
-export default AuthForm;
+export default React.memo(AuthForm);

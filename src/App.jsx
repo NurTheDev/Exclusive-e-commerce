@@ -1,11 +1,9 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from "react-router";
-import Login from "./Pages/authentication/Login.jsx";
 import Loading from "./helper/Loading.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductDetails from "./Pages/protected/SingleProductDetails/ProductDetails.jsx";
-import SignUp from "./Pages/authentication/SignUp.jsx";
 
 const App = () => {
     const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
@@ -13,6 +11,9 @@ const App = () => {
     const NotFound = lazy(() => import("./Pages/Not Found/NotFound.jsx"));
     const Product = lazy(() => import("./Pages/protected/Product/ProductPage.jsx"));
     const ProductDetails = lazy(() => import("./Pages/protected/SingleProductDetails/ProductDetails.jsx"));
+    const WishList = lazy(() => import("./Pages/protected/WishList/WishList.jsx"));
+    const SignUp = lazy(() => import("./Pages/authentication/SignUp.jsx"));
+    const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
     return (
         <>
             <Routes>
@@ -38,6 +39,10 @@ const App = () => {
                     <Route path="contact" element={
                         <Suspense fallback={<Loading/>}>
                             <h1>contact</h1>
+                        </Suspense>
+                    }/> <Route path="wishlist" element={
+                        <Suspense fallback={<Loading/>}>
+                            <WishList/>
                         </Suspense>
                     }/>
                     <Route path={"category/:id"} element={
