@@ -5,6 +5,7 @@ import Loading from "./helper/Loading.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductDetails from "./Pages/protected/SingleProductDetails/ProductDetails.jsx";
+import SignUp from "./Pages/authentication/SignUp.jsx";
 
 const App = () => {
     const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
@@ -15,7 +16,11 @@ const App = () => {
     return (
         <>
             <Routes>
-                <Route path="/login" element={<Login/>}/>
+                <Route path="/login" element={<Suspense fallback={<Loading/>}>
+                    <Login/>
+                </Suspense>}/> <Route path="/signup" element={<Suspense fallback={<Loading/>}>
+                    <SignUp/>
+                </Suspense>}/>
                 {/* Define the protected route structure */}
                 <Route element={<Suspense fallback={<Loading/>}>
                     <Index/>
