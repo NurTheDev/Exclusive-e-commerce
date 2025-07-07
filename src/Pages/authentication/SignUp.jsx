@@ -51,7 +51,6 @@ const SignUp = () => {
           onTogglePassword={togglePasswordVisibility}
           isLoading={isLoading}
         />
-
         <p className="normal-text">
           Already have an account?{' '}
           <Link to="/login" className="font-semibold cursor-pointer hover:underline">
