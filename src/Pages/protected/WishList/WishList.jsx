@@ -3,6 +3,7 @@ import Breadcrumbs from "../../../comonComponent/Breadcrumbs.jsx";
 import Button from "../../../comonComponent/Button.jsx";
 import {useGetProductQuery} from "../../../features/API/productAPI.js";
 import ProductCard from "../../../comonComponent/ProductCard.jsx";
+import WishProductCard from "./component/WishProductCard.jsx";
 
 const WishList = () => {
     const {data, error, isLoading} = useGetProductQuery()
@@ -20,6 +21,7 @@ const WishList = () => {
                     </div>
                 ))}
             </div>
+            <WishProductCard/>
         </div>
     );
 };
