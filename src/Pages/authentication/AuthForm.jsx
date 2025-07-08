@@ -10,6 +10,7 @@ const AuthForm = ({
   onTogglePassword,
   isLoading = false
 }) => {
+
   return (
     <form className="flex flex-col gap-5 lg:w-1/2" onSubmit={onSubmit}>
       {formType === 'signup' && (

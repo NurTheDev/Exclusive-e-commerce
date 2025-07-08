@@ -4,6 +4,7 @@ import Loading from "./helper/Loading.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductDetails from "./Pages/protected/SingleProductDetails/ProductDetails.jsx";
+import {useAuth} from "./hooks/useAuth.js";
 
 const App = () => {
     const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
@@ -14,6 +15,8 @@ const App = () => {
     const WishList = lazy(() => import("./Pages/protected/WishList/WishList.jsx"));
     const SignUp = lazy(() => import("./Pages/authentication/SignUp.jsx"));
     const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
+    const { user, isAuthenticated, signOut, isLoading, error } = useAuth();
+    console.log(isAuthenticated, user, signOut, isLoading, error);
     return (
         <>
             <Routes>

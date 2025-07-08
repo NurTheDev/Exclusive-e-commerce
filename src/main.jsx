@@ -8,6 +8,7 @@ import { store } from './features/store.js'
 import { Provider } from 'react-redux'
 import Database from "./Database/firebase.config.js";
 import { ToastContainer } from 'react-toastify';
+import {AuthProvider} from "./Context/AuthContext.jsx";
 const container = document.getElementById('root')
 if (container) {
     const root = createRoot(container)
@@ -16,8 +17,10 @@ if (container) {
         <StrictMode>
             <BrowserRouter>
                 <Provider store={store}>
-                    <App />
-                    <ToastContainer/>
+                   <AuthProvider>
+                       <App />
+                       <ToastContainer/>
+                   </AuthProvider>
                 </Provider>
             </BrowserRouter>
         </StrictMode>,

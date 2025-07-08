@@ -10,9 +10,7 @@ import {
 import {toast, Zoom} from "react-toastify";
 import {AUTH_INITIAL_STATE, TOAST_CONFIG, AUTH_ERROR_MESSAGES} from "../constance/authConstance.js";
 import {authReducer, authActions} from "../Reducer/authReducer.js";
-
 export const AuthContext = createContext();
-
 export const AuthProvider = ({children})=>{
     const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
     const auth = getAuth()
@@ -43,7 +41,8 @@ export const AuthProvider = ({children})=>{
         return () => {
             unsubscribe()
         }
-    }, [auth])
+    }, [auth, dispatch])
+
     // Helper functions
     const showErrorToast = (message) => {
         toast.error(message, { ...TOAST_CONFIG, transition: Zoom });
@@ -59,10 +58,17 @@ export const AuthProvider = ({children})=>{
         showErrorToast(message);
         dispatch(authActions.setError(message));
     };
+
+    // Helper function for email validation
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
 //     auth methods
     const signUp = async (data)=>{
         dispatch(authActions.setLoading(true))
-        if(!data.numberEmail.includes("@") || !data.numberEmail.includes(".com")){
+        if(!isValidEmail(data.numberEmail)){
             showErrorToast("Please enter a valid email address.");
             dispatch(authActions.setLoading(false))
             return false;
@@ -74,15 +80,17 @@ export const AuthProvider = ({children})=>{
                 displayName: data.name
             })
             showSuccessToast("Account created successfully");
+            dispatch(authActions.setLoading(false))
             return true
         } catch(error){
             handleAuthError(error);
+            dispatch(authActions.setLoading(false))
             return false;
         }
     }
     const signIn = async (data)=>{
         dispatch(authActions.setLoading(true))
-        if(!data.numberEmail.includes("@") || !data.numberEmail.includes(".com")){
+        if(!isValidEmail(data.numberEmail)){
             showErrorToast("Please enter a valid email address.");
             dispatch(authActions.setLoading(false))
             return false;
@@ -92,19 +100,25 @@ export const AuthProvider = ({children})=>{
             const user = userCredential.user;
             showSuccessToast("Login successful");
             console.log(user)
+            dispatch(authActions.setLoading(false))
             return true
         } catch(error){
             handleAuthError(error);
+            dispatch(authActions.setLoading(false))
             return false;
         }
     }
     const signOutUser = async ()=>{
+        dispatch(authActions.setLoading(true))
         try {
             await signOut(auth);
             showSuccessToast("Logout successful");
             dispatch(authActions.logout())
+            return true
         } catch (error){
             handleAuthError(error);
+            dispatch(authActions.setLoading(false))
+            return false;
         }
     }
     const resetError = ()=>{
@@ -119,8 +133,8 @@ export const AuthProvider = ({children})=>{
         resetError
     }
     return (
-        <AuthProvider value={value}>
+        <AuthContext.Provider value={value}>
             {children}
-        </AuthProvider>
+        </AuthContext.Provider>
     )
 }

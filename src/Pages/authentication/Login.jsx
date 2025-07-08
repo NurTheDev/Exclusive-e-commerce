@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import login from "../../assets/Login/login.jpg";
 import AuthForm from './AuthForm.jsx';
-import {Link} from "react-router";
-
+import {Link, useNavigate} from "react-router";
+import { AuthContext } from "../../Context/AuthContext.jsx";
 const Login = () => {
-
+  const { signIn, isLoading } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
   const [passwordShown, setPasswordShown] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
-    console.log(data)
+    const success = await signIn(data);
+    if (success) {
 
+      navigate('/');
+    }
   };
 
   const togglePasswordVisibility = () => {
