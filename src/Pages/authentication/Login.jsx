@@ -5,6 +5,7 @@ import AuthForm from './AuthForm.jsx';
 import {Link} from "react-router";
 
 const Login = () => {
+
   const {
     register,
     handleSubmit,
@@ -15,16 +16,8 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    try {
-      setIsLoading(true);
-      console.log(data);
-      // Add your login logic here
-      // await authService.login(data);
-    } catch (error) {
-      console.error('Login error:', error);
-    } finally {
-      setIsLoading(false);
-    }
+    console.log(data)
+
   };
 
   const togglePasswordVisibility = () => {

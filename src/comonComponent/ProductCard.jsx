@@ -11,6 +11,10 @@ const ProductCard = ({product = {}, loading, discount, wishItem}) => {
     const handleProductClick = (product) => {
         navigate(`/product/${product.id} `)
     }
+    const handleFavorite = (e, product) => {
+        e.stopPropagation()
+        console.log(product)
+    }
     return (
         <>
             {!loading ? <div onClick={() => handleProductClick(product)} className={"relative group cursor-pointer hover:scale-95 transition-all" +
@@ -23,7 +27,10 @@ const ProductCard = ({product = {}, loading, discount, wishItem}) => {
                     <div className={"flex justify-between items-start absolute w-full p-3 top-0"}>
                         {discount && <span className={"bg-red-500 text-white px-2 py-1 rounded-full"}>{Math.round(product.discountPercentage)}% OFF</span>}
                         <div className={"text-xl"}>
-                            {!wishItem && (<span className={"bg-white hover:scale-95 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full mb-3"}><FaRegHeart /></span>)}
+                            {!wishItem && (<span onClick={(e) => handleFavorite(e, product)} className={"bg-white" +
+                                " hover:scale-95 cursor-pointer" +
+                                " w-10 h-10 flex" +
+                                " justify-center items-center rounded-full mb-3"}><FaRegHeart /></span>)}
                             <span className={"bg-white hover:scale-95 cursor-pointer  w-10 h-10 flex justify-center" +
                                 " items-center" +
                                 " rounded-full"}><GoEye /></span>

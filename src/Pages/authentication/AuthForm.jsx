@@ -55,7 +55,7 @@ const AuthForm = ({
             type={passwordShown ? "text" : "password"}
             placeholder="Password"
             required={true}
-            pattern={/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/}
+            pattern={/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/}
           />
           <div
             className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl"

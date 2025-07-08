@@ -6,9 +6,9 @@ import { BrowserRouter } from "react-router";
 import App from './App.jsx'
 import { store } from './features/store.js'
 import { Provider } from 'react-redux'
-
+import Database from "./Database/firebase.config.js";
+import { ToastContainer } from 'react-toastify';
 const container = document.getElementById('root')
-
 if (container) {
     const root = createRoot(container)
 
@@ -17,6 +17,7 @@ if (container) {
             <BrowserRouter>
                 <Provider store={store}>
                     <App />
+                    <ToastContainer/>
                 </Provider>
             </BrowserRouter>
         </StrictMode>,
