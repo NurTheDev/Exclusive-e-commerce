@@ -8,7 +8,7 @@ import { store } from './features/store.js'
 import { Provider } from 'react-redux'
 import Database from "./Database/firebase.config.js";
 import { ToastContainer } from 'react-toastify';
-import {AuthProvider} from "./Context/AuthContext.jsx";
+import {AuthProvider} from "./Context/AuthProvider.jsx";
 const container = document.getElementById('root')
 if (container) {
     const root = createRoot(container)

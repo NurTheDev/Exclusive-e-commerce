@@ -1,4 +1,5 @@
-import React, {createContext, useEffect, useReducer} from 'react';
+import React, { useEffect, useReducer} from 'react';
+import {AuthContext} from "./AuthContext.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -10,7 +11,6 @@ import {
 import {toast, Zoom} from "react-toastify";
 import {AUTH_INITIAL_STATE, TOAST_CONFIG, AUTH_ERROR_MESSAGES} from "../constance/authConstance.js";
 import {authReducer, authActions} from "../Reducer/authReducer.js";
-export const AuthContext = createContext();
 export const AuthProvider = ({children})=>{
     const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
     const auth = getAuth()
@@ -31,7 +31,7 @@ export const AuthProvider = ({children})=>{
                     localStorage.setItem('user', JSON.stringify(userData));
                     localStorage.setItem('token', user.accessToken);
                 } else{
-                //     user is signed out
+                    //     user is signed out
                     dispatch(authActions.logout())
                     localStorage.removeItem('user')
                     localStorage.removeItem('token')

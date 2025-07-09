@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import login from "../../assets/Login/login.jpg";
 import AuthForm from './AuthForm.jsx';
 import {Link, useNavigate} from "react-router";
-import { AuthContext } from "../../Context/AuthContext.jsx";
+import { AuthContext } from "../../Context/AuthContext.js";
 const Login = () => {
   const { signIn, isLoading } = useContext(AuthContext);
   const {

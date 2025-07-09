@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import {Link, useNavigate} from 'react-router';
 import SignUpImg from "../../assets/Login/signup.jpg";
 import AuthForm from './AuthForm.jsx';
-import { AuthContext } from "../../Context/AuthContext.jsx";
+import { AuthContext } from "../../Context/AuthContext.js";
 const SignUp = () => {
   const {
     register,

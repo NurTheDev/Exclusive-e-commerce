@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Status from "./Status.jsx";
 import user from "../assets/user.svg";
 import {IoMdSearch} from "react-icons/io";
@@ -6,9 +6,17 @@ import {FaRegHeart, FaRegUser, FaShoppingBag} from "react-icons/fa";
 import {FiShoppingCart, FiStar} from "react-icons/fi";
 import {BiCollection} from "react-icons/bi";
 import {CgLogOut} from "react-icons/cg";
-import {NavLink} from "react-router";
+import {NavLink, useNavigate} from "react-router";
 import {NavbarData} from "../data/data.js";
+import {AuthContext} from "../Context/AuthContext.js";
+
 const Navbar = () => {
+    const navigate=useNavigate();
+    const {signOutUser}= useContext(AuthContext);
+    const handleLogout= async ()=>{
+       await signOutUser();
+        navigate("/login");
+    }
     return (
         <>
             <div>
@@ -132,7 +140,7 @@ const Navbar = () => {
                             </li><li><a
                                 className="justify-start gap-x-2 w-full items-center"><span><FiStar/></span><span>My Review</span></a>
                             </li>
-                            <li><a
+                            <li><a onClick={handleLogout}
                                 className="justify-start gap-x-2 w-full items-center"><span><CgLogOut  /></span><span>Log out</span></a>
                             </li>
                         </ul>
