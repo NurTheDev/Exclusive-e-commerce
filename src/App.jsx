@@ -15,7 +15,7 @@ const WishList = lazy(() => import("./Pages/protected/WishList/WishList.jsx"));
 const SignUp = lazy(() => import("./Pages/authentication/SignUp.jsx"));
 const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
 const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
-
+const About = lazy(() => import("./Pages/protected/About.jsx"));
 const App = () => {
     const { isAuthenticated } = useAuth();
     return (
@@ -33,7 +33,7 @@ const App = () => {
                         <Route path="/signup" element={<Navigate to="/" replace />} />
                     <Route element={<Index />}>
                         <Route index element={<Home />} />
-                        <Route path="about" element={<h1>about</h1>} />
+                        <Route path="about" element={<About/>} />
                         <Route path="contact" element={<h1>contact</h1>} />
                         <Route path="wishlist" element={<WishList />} />
                         <Route path="category/:id" element={<Product />} />

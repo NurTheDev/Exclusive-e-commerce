@@ -1,137 +1,113 @@
-import React, { useState } from 'react';
-import {useNavigate} from "react-router";
+import React from 'react';
+import { useNavigate } from 'react-router';
 
 const NotFound = () => {
     const navigate = useNavigate();
-    const [nf_searchQuery, setNf_searchQuery] = useState('');
 
-    const handleNf_goHome = () => {
+    const handleGoHome = () => {
         navigate('/');
     };
 
-    const handleNf_goBack = () => {
+    const handleGoBack = () => {
         navigate(-1);
     };
 
-    const handleNf_search = (e) => {
-        e.preventDefault();
-        if (nf_searchQuery.trim()) {
-            navigate(`/search?q=${encodeURIComponent(nf_searchQuery)}`);
-        }
-    };
-
-    const nf_popularCategories = [
-        { name: 'Electronics', icon: '📱', path: '/category/electronics' },
-        { name: 'Fashion', icon: '👕', path: '/category/fashion' },
-        { name: 'Home ', icon: '🏠', path: '/' },
-        { name: 'Sports', icon: '⚽', path: '/category/sports' }
+    const quickLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Shop', path: '/products' },
+        { name: 'Categories', path: '/categories' },
+        { name: 'Contact', path: '/contact' }
     ];
 
     return (
-        <div className="nf-not-found-container">
-            {/* Animated Background Elements */}
-            <div className="nf-floating-shapes">
-                <div className="nf-shape nf-shape-1"></div>
-                <div className="nf-shape nf-shape-2"></div>
-                <div className="nf-shape nf-shape-3"></div>
-                <div className="nf-shape nf-shape-4"></div>
-                <div className="nf-shape nf-shape-5"></div>
-            </div>
-
-            <div className="nf-not-found-content">
-                {/* Animated 404 with Shopping Theme */}
-                <div className="nf-error-section">
-                    <div className="nf-error-code">
-                        <span className="nf-digit">4</span>
-                        <div className="nf-shopping-cart">
-                            <div className="nf-cart-body">
-                                <div className="nf-cart-handle"></div>
-                                <div className="nf-cart-wheels">
-                                    <div className="nf-wheel nf-wheel-1"></div>
-                                    <div className="nf-wheel nf-wheel-2"></div>
-                                </div>
-                                <div className="nf-cart-items">
-                                    <div className="nf-item nf-item-1"></div>
-                                    <div className="nf-item nf-item-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <span className="nf-digit">4</span>
+        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 flex items-center justify-center px-4">
+            <div className="max-w-2xl mx-auto text-center">
+                {/* Animated 404 */}
+                <div className="relative mb-8">
+                    <div className="text-9xl font-bold text-gray-200 select-none">
+                        404
                     </div>
-
-                    <div className="nf-empty-box">
-                        <div className="nf-box">
-                            <div className="nf-box-lid"></div>
-                            <div className="nf-box-body">
-                                <div className="nf-sad-face">😔</div>
-                            </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-32 h-32 bg-red-100 rounded-full flex items-center justify-center animate-bounce">
+                            <svg
+                                className="w-16 h-16 text-red-500"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.268 16.5c-.77.833.192 2.5 1.732 2.5z"
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>
 
                 {/* Main Message */}
-                <div className="nf-message-section">
-                    <h1 className="nf-title">Oops! Product Not Found</h1>
-                    <p className="nf-subtitle">
-                        It looks like the page you're looking for has been moved, deleted, or doesn't exist.
-                        But don't worry! Our exclusive collection has plenty of amazing products waiting for you.
+                <div className="mb-8">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Page Not Found
+                    </h1>
+                    <p className="text-lg text-gray-600 mb-6 max-w-lg mx-auto">
+                        Sorry, we couldn't find the page you're looking for.
+                        The page might have been moved, deleted, or you entered the wrong URL.
                     </p>
                 </div>
 
-                {/* Search Section */}
-                <div className="nf-search-section">
-                    <h3>Search for what you need:</h3>
-                    <form onSubmit={handleNf_search} className="nf-search-form">
-                        <div className="nf-search-input-container">
-                            <input
-                                type="text"
-                                placeholder="Search products..."
-                                value={nf_searchQuery}
-                                onChange={(e) => setNf_searchQuery(e.target.value)}
-                                className="nf-search-input"
-                            />
-                            <button type="submit" className="nf-search-btn">
-                                <span>🔍</span>
-                            </button>
-                        </div>
-                    </form>
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <button
+                        onClick={handleGoHome}
+                        className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Go Home
+                    </button>
+                    <button
+                        onClick={handleGoBack}
+                        className="px-8 py-3 bg-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200 flex items-center justify-center gap-2"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Go Back
+                    </button>
                 </div>
 
-                {/* Popular Categories */}
-                <div className="nf-categories-section">
-                    <h3>Or explore popular categories:</h3>
-                    <div className="nf-categories-grid">
-                        {nf_popularCategories.map((category, index) => (
+                {/* Quick Links */}
+                <div className="border-t border-gray-200 pt-8">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                        Quick Links
+                    </h3>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {quickLinks.map((link) => (
                             <button
-                                key={category.name}
-                                onClick={() => navigate(category.path)}
-                                className="nf-category-card"
-                                style={{ animationDelay: `${index * 0.1}s` }}
+                                key={link.name}
+                                onClick={() => navigate(link.path)}
+                                className="px-4 py-2 text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
                             >
-                                <span className="nf-category-icon">{category.icon}</span>
-                                <span className="nf-category-name">{category.name}</span>
+                                {link.name}
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="nf-action-buttons">
-                    <button onClick={handleNf_goHome} className="nf-btn nf-btn-primary">
-                        <span className="nf-btn-icon">🏠</span>
-                        <span className="nf-btn-text">Go to Homepage</span>
-                        <div className="nf-btn-ripple"></div>
-                    </button>
-                    <button onClick={handleNf_goBack} className="nf-btn nf-btn-secondary">
-                        <span className="nf-btn-icon">←</span>
-                        <span className="nf-btn-text">Go Back</span>
-                        <div className="nf-btn-ripple"></div>
-                    </button>
-                </div>
-
-                {/* Help Section */}
-                <div className="nf-help-section">
-                    <p>Still need help? <a href="/contact">Contact our support team</a></p>
+                {/* Help Text */}
+                <div className="mt-8 text-sm text-gray-500">
+                    <p>
+                        Need help? {' '}
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="text-blue-600 hover:text-blue-800 underline"
+                        >
+                            Contact Support
+                        </button>
+                    </p>
                 </div>
             </div>
         </div>
