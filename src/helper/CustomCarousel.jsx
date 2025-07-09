@@ -18,6 +18,7 @@ const CustomCarousel = (props) => {
             />
         );
     }
+    console.log(props.data)
     return (
         <div className={"container mx-auto relative"}>
             {props.button === "arrows" && <ArrowGroup ref={sliderRef} className={"absolute top-1/2 lg:-top-[70px]" +

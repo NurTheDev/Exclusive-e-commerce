@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import login from "../../assets/Login/login.jpg";
 import AuthForm from './AuthForm.jsx';
 import {Link, useNavigate} from "react-router";
-import { Index } from "../../Context/index.js";
+import { AuthContext } from "../../Context/index.js";
 const Login = () => {
-  const { signIn, isLoading } = useContext(Index);
+  const { signIn, isLoading } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -16,7 +16,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     const success = await signIn(data);
     if (success) {
-
       navigate('/');
     }
   };
