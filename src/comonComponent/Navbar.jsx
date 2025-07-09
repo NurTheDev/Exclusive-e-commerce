@@ -8,7 +8,7 @@ import {BiCollection} from "react-icons/bi";
 import {CgLogOut} from "react-icons/cg";
 import {NavLink, useNavigate} from "react-router";
 import {NavbarData} from "../data/data.js";
-import {AuthContext} from "../Context/AuthContext.js";
+import {AuthContext} from "../Context/index.js";
 
 const Navbar = () => {
     const navigate=useNavigate();

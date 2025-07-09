@@ -18,7 +18,6 @@ const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
 
 const App = () => {
     const { isAuthenticated } = useAuth();
-
     return (
         <Suspense fallback={<Loading />}>
             <Routes>

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer} from 'react';
-import {AuthContext} from "./AuthContext.js";
+import {AuthContext} from "./index.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,

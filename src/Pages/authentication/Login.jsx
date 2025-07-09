@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import login from "../../assets/Login/login.jpg";
 import AuthForm from './AuthForm.jsx';
 import {Link, useNavigate} from "react-router";
-import { AuthContext } from "../../Context/AuthContext.js";
+import { Index } from "../../Context/index.js";
 const Login = () => {
-  const { signIn, isLoading } = useContext(AuthContext);
+  const { signIn, isLoading } = useContext(Index);
   const {
     register,
     handleSubmit,

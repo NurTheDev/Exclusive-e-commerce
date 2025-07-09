@@ -3,14 +3,14 @@ import { useForm } from 'react-hook-form';
 import {Link, useNavigate} from 'react-router';
 import SignUpImg from "../../assets/Login/signup.jpg";
 import AuthForm from './AuthForm.jsx';
-import { AuthContext } from "../../Context/AuthContext.js";
+import { Index } from "../../Context/index.js";
 const SignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-const { signUp, isLoading } = useContext(AuthContext);
+const { signUp, isLoading } = useContext(Index);
   const [passwordShown, setPasswordShown] = useState(false);
 const navigate = useNavigate();
   const onSubmit = async (data) => {

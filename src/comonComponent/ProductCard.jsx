@@ -1,20 +1,30 @@
 import React from 'react';
-import {FaRegHeart} from "react-icons/fa";
+import {FaHeart, FaRegHeart} from "react-icons/fa";
 import {GoEye} from "react-icons/go";
 import Button from "./Button.jsx";
 import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import {getDiscountPrice} from "../utils/index.js";
 import {useNavigate} from "react-router";
+import addWishList from "../utils/addWishList.js";
+import removeWishList from "../utils/removeWishList.js";
 const ProductCard = ({product = {}, loading, discount, wishItem}) => {
+    const [isFavorite, setIsFavorite] = React.useState(false)
     const navigate = useNavigate()
     const handleProductClick = (product) => {
         navigate(`/product/${product.id} `)
     }
     const handleFavorite = (e, product) => {
         e.stopPropagation()
-        console.log(product)
+        if(!isFavorite) {
+            addWishList(product)
+            setIsFavorite(true)
+        } else{
+            removeWishList(product)
+            setIsFavorite(false)
+        }
     }
+
     return (
         <>
             {!loading ? <div onClick={() => handleProductClick(product)} className={"relative group cursor-pointer hover:scale-95 transition-all" +
@@ -30,7 +40,7 @@ const ProductCard = ({product = {}, loading, discount, wishItem}) => {
                             {!wishItem && (<span onClick={(e) => handleFavorite(e, product)} className={"bg-white" +
                                 " hover:scale-95 cursor-pointer" +
                                 " w-10 h-10 flex" +
-                                " justify-center items-center rounded-full mb-3"}><FaRegHeart /></span>)}
+                                " justify-center items-center rounded-full mb-3"}>{isFavorite ? <FaHeart  className={"text-red-500"}/> : <FaRegHeart/>}</span>)}
                             <span className={"bg-white hover:scale-95 cursor-pointer  w-10 h-10 flex justify-center" +
                                 " items-center" +
                                 " rounded-full"}><GoEye /></span>

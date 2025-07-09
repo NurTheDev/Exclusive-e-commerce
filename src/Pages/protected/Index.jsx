@@ -4,11 +4,10 @@ import Navbar from "../../comonComponent/Navbar.jsx";
 import Footer from "../../comonComponent/Footer.jsx";
 
 const Index = () => {
-
     return (
         <div>
             <Navbar/>
-            {<Outlet/>}
+            <Outlet/>
             <Footer/>
         </div>
     );
