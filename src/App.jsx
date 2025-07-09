@@ -14,6 +14,7 @@ const ProductDetails = lazy(() => import("./Pages/protected/SingleProductDetails
 const WishList = lazy(() => import("./Pages/protected/WishList/WishList.jsx"));
 const SignUp = lazy(() => import("./Pages/authentication/SignUp.jsx"));
 const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
+const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
 
 const App = () => {
     const { isAuthenticated } = useAuth();
@@ -39,9 +40,10 @@ const App = () => {
                         <Route path="product/:id" element={<ProductDetails />} />
                         {/* Add more protected routes here */}
                     </Route>
+                        <Route path="*" element={<NotFound />} />
                     </>
                 )}
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<LoginRequired/>} />
             </Routes>
         </Suspense>
     );
