@@ -124,7 +124,7 @@ const getSettings = (component) => {
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         initialSlide: 2,
-                    row: 1
+                    rows: 1
                     }
                 },
                 {
@@ -132,7 +132,7 @@ const getSettings = (component) => {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        row: 1
+                        rows: 1
                     }
                 }
             ]
