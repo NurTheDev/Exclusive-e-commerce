@@ -7,8 +7,8 @@ import Button from "./Button.jsx";
 import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import { getDiscountPrice } from "../utils/index.js";
-import {addToWishList} from "../utils/addToDatabase.js";
-import removeWishList from "../utils/removeWishList.js";
+import {addToCart, addToWishList} from "../utils/addToDatabase.js";
+import {removeWishList} from "../utils/removeFromData.js";
 
 const ProductCard = ({
                          product = {},
@@ -44,7 +44,7 @@ const ProductCard = ({
     const handleAddToCart = useCallback((e, product) => {
         e.stopPropagation();
         // Add to cart logic here
-
+        addToCart(product);
     }, []);
 
     const handleRemoveFromWishlist = useCallback((e) => {

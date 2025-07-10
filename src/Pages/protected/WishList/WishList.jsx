@@ -20,7 +20,6 @@ const WishList = () => {
         setShowItems((prevItems) => prevItems + 4);
         console.log(showItems)
     };
-    console.log(wishlistProducts)
     return (
         <div className={"container mx-auto p-6"}>
             <Breadcrumbs/>
