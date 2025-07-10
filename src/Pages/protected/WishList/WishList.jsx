@@ -20,11 +20,12 @@ const WishList = () => {
         setShowItems((prevItems) => prevItems + 4);
         console.log(showItems)
     };
+    console.log(wishlistProducts)
     return (
         <div className={"container mx-auto p-6"}>
             <Breadcrumbs/>
             <div className={"flex justify-between items-center mt-6"}>
-                <h3 className={"small-heading-medium"}>Wishlist (6)</h3>
+                <h3 className={"small-heading-medium"}>Wishlist ({wishlistProducts.length})</h3>
                 <Button btnText={"Move All To Bag"} className={"px-12 bg-transparent border border-black"}/>
             </div>
             {

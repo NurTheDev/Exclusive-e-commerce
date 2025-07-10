@@ -1,19 +1,9 @@
 import React from 'react';
 
-const Button = ({btnText, className}) => {
+const Button = ({btnText, className, onClick}) => {
     return (
-        <button className={`btn ${className}  transition-all py-4 cursor-pointer hover:scale-95`}>
+        <button onClick={onClick} className={`btn ${className}  transition-all py-6 cursor-pointer hover:scale-95`}>
             {btnText}
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 className="h-5 w-5 ml-2"
-                 fill="none"
-                 viewBox="0 0 24 24"
-                 stroke="currentColor">
-                <path strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
-            </svg>
         </button>
     );
 };

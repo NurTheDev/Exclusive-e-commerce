@@ -2,7 +2,7 @@ import { getDatabase, ref, set } from "firebase/database";
 import {toast, Zoom} from "react-toastify";
 import {TOAST_CONFIG} from "../constance/authConstance.js";
 
-const addWishList = async (product)=> {
+const addToWishList = async (product)=> {
     try {
         const db = getDatabase();
         await set(ref(db, `wishList/${product.id}`), product);
@@ -12,4 +12,4 @@ const addWishList = async (product)=> {
         console.log("wishList removed", error)
     }
 }
-export default addWishList
+export {addToWishList}

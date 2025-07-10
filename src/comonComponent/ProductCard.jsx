@@ -7,7 +7,7 @@ import Button from "./Button.jsx";
 import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 import Rating from "./Rating.jsx";
 import { getDiscountPrice } from "../utils/index.js";
-import addWishList from "../utils/addWishList.js";
+import {addToWishList} from "../utils/addToDatabase.js";
 import removeWishList from "../utils/removeWishList.js";
 
 const ProductCard = ({
@@ -28,7 +28,7 @@ const ProductCard = ({
         e.stopPropagation();
 
         if (!isFavorite) {
-            addWishList(product);
+            addToWishList(product);
             setIsFavorite(true);
         } else {
             removeWishList(product);
@@ -41,9 +41,10 @@ const ProductCard = ({
         // Add quick view logic here
     }, []);
 
-    const handleAddToCart = useCallback((e) => {
+    const handleAddToCart = useCallback((e, product) => {
         e.stopPropagation();
         // Add to cart logic here
+
     }, []);
 
     const handleRemoveFromWishlist = useCallback((e) => {
@@ -122,7 +123,7 @@ const ProductCard = ({
             <Button
                 className="bg-black group-hover:opacity-100 opacity-0 text-white absolute bottom-0 left-0 w-full transition-opacity duration-300"
                 btnText="Add to Cart"
-                onClick={handleAddToCart}
+                onClick={(e) => handleAddToCart(e, product)}
             />
         </div>
     );
