@@ -1,7 +1,7 @@
-const getImgUrl = (name)=>{
+const getImgUrl = (name) => {
     return new URL(`../assets/${name}`, import.meta.url).href
 }
-const getDiscountPrice=(price, discount)=>{
+const getDiscountPrice = (price, discount) => {
     return Math.round(price - (price * (discount / 100)))
 }
 const settings = {
@@ -12,23 +12,24 @@ const settings = {
 };
 
 const getSettings = (component) => {
-    if(component === "banner") {
+    if (component === "banner") {
         return {
             ...settings,
             arrows: false,
             autoplay: true,
             dots: true,
-        }} else if(component === "offer") {
+        }
+    } else if (component === "offer") {
         return {
             ...settings,
             arrows: false,
             autoplay: true,
             dots: false,
         }
-    }
-    else if(component === "product") {
+    } else if (component === "product") {
         return {
-            ...settings,
+            infinite: true,
+            speed: 500,
             arrows: false,
             autoplay: true,
             slidesToShow: 4,
@@ -62,9 +63,10 @@ const getSettings = (component) => {
                 }
             ]
         }
-    } else if(component === "category") {
-        return{
-            ...settings,
+    } else if (component === "category") {
+        return {
+            infinite: true,
+            speed: 500,
             arrows: false,
             autoplay: true,
             slidesToShow: 6,
@@ -97,8 +99,7 @@ const getSettings = (component) => {
                 }
             ]
         }
-    }
-    else if(component === "exploreProduct") {
+    } else if (component === "exploreProduct") {
         return {
             ...settings,
             arrows: true,
@@ -124,7 +125,7 @@ const getSettings = (component) => {
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         initialSlide: 2,
-                    rows: 1
+                        rows: 1
                     }
                 },
                 {
@@ -133,6 +134,42 @@ const getSettings = (component) => {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         rows: 1
+                    }
+                }
+            ]
+        }
+    } else if (component === "team") {
+        return {
+            infinite: true,
+            speed: 500,
+            arrows: false,
+            autoplay: false,
+            dots: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
                     }
                 }
             ]

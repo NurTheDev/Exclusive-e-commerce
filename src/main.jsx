@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import Database from "./Database/firebase.config.js";
 import { ToastContainer } from 'react-toastify';
 import {AuthProvider} from "./Context/AuthProvider.jsx";
+import ErrorBoundary from "./helper/ErrorBoundry.jsx";
 const container = document.getElementById('root')
 if (container) {
     const root = createRoot(container)
@@ -18,7 +19,9 @@ if (container) {
             <BrowserRouter>
                 <Provider store={store}>
                    <AuthProvider>
-                       <App />
+                       <ErrorBoundary>
+                           <App/>
+                       </ErrorBoundary>
                        <ToastContainer/>
                    </AuthProvider>
                 </Provider>

@@ -112,4 +112,28 @@ const NavbarData = [
         link: "/signout"
     }
 ]
-export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData}
+const aboutUs =[
+    {id: 1, title: "10.5k ", image: "Services.svg",  description: "Sallers active our site"},{
+        id: 2,
+        title: "33k",
+        image: "doller.svg",
+        description: "Mopnthly Produduct Sale"
+    },{
+        id: 3,
+        title: "45.5k",
+        image: "bag.svg",
+        description: "Customer active in our site"
+    }, {
+        id: 4,
+        title: "25k",
+        image: "moneyBag.svg",
+        description: "Anual gross sale in our site"
+    }
+]
+const team = [
+    {id: 1, name: "Tom Cruise", position: "CEO & Founder", image: "person1.png", social: "facebook.com"},
+    {id: 2, name: "Emma Watson", position: "Managing Director", image: "person2.png", social: "facebook.com"},
+    {id: 3, name: "Will Smith", position: "Product Designer", image: "person3.png", social: "facebook.com"},
+    {id: 3, name: "Nur Islam", position: "Founder & Chairman", image: "person4.png", social: "facebook.com"},
+]
+export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData, aboutUs, team}

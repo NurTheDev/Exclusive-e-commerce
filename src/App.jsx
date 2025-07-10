@@ -15,7 +15,7 @@ const WishList = lazy(() => import("./Pages/protected/WishList/WishList.jsx"));
 const SignUp = lazy(() => import("./Pages/authentication/SignUp.jsx"));
 const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
 const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
-const About = lazy(() => import("./Pages/protected/About.jsx"));
+const About = lazy(() => import("./Pages/protected/About/About.jsx"));
 const App = () => {
     const { isAuthenticated } = useAuth();
     return (
