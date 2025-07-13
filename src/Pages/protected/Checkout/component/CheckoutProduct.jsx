@@ -123,6 +123,12 @@ const CheckoutProduct = ({onSubmit, isProcessing, canProceed}) => {
                     >
                         <option value="credit-card">Credit Card</option>
                         <option value="paypal">PayPal</option>
+                        <option value="paytm">Paytm</option>
+                        <option value="amazon-pay">Amazon Pay</option>
+                        <option value="google-pay">Google Pay</option>
+                        <option value="phonepe">PhonePe</option>
+                        <option value="mobiKwik">MobiKwik</option>
+                        <option value="freecharge">Freecharge</option>
                         <option value="cash-on-delivery">Cash on Delivery</option>
                     </select>
                 </div>
