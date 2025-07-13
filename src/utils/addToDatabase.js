@@ -2,6 +2,7 @@ import { getDatabase, ref, set, update } from "firebase/database";
 import {toast, Zoom} from "react-toastify";
 import {TOAST_CONFIG} from "../constance/authConstance.js";
 import {product} from "../data/data.js";
+import {c} from "vite/dist/node/moduleRunnerTransport.d-DJ_mE5sf.js";
 const db = getDatabase();
 const addToWishList = async (product)=> {
     try {
