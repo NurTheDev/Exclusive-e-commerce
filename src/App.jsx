@@ -17,6 +17,7 @@ const Login = lazy(() => import("./Pages/authentication/Login.jsx"));
 const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
 const About = lazy(() => import("./Pages/protected/About/About.jsx"));
 const Cart = lazy(() => import("./Pages/protected/Cart/Cart.jsx"));
+const Checkout = lazy(() => import("./Pages/protected/Checkout/Checkout.jsx"));
 const App = () => {
     const { isAuthenticated } = useAuth();
     return (
@@ -40,6 +41,7 @@ const App = () => {
                         <Route path="category/:id" element={<Product />} />
                         <Route path="product/:id" element={<ProductDetails />} />
                         <Route path ="/cart" element={<Cart/>} />
+                        <Route path="/checkout" element={<Checkout />} />
                         {/* Add more protected routes here */}
                     </Route>
                         <Route path="*" element={<NotFound />} />

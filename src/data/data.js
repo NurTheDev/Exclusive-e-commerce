@@ -136,4 +136,63 @@ const team = [
     {id: 3, name: "Will Smith", position: "Product Designer", image: "person3.png", social: "facebook.com"},
     {id: 3, name: "Nur Islam", position: "Founder & Chairman", image: "person4.png", social: "facebook.com"},
 ]
-export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData, aboutUs, team}
+const billingFields = [
+    {
+        id: 'firstName',
+        label: 'First Name *',
+        placeholder: 'First Name',
+        type: 'text',
+        required: true
+    },
+    {
+        id: 'lastName',
+        label: 'Last Name *',
+        placeholder: 'Last Name',
+        type: 'text',
+        required: true
+    },
+    {
+        id: 'email',
+        label: 'Email *',
+        placeholder: 'Email',
+        type: 'email',
+        required: true
+    },
+    {
+        id: 'address',
+        label: 'Address *',
+        placeholder: 'Address',
+        type: 'text',
+        required: true
+    },
+    {
+        id: 'city',
+        label: 'City',
+        placeholder: 'City',
+        type: 'text',
+        required: false
+    },
+    {
+        id: 'state',
+        label: 'State',
+        placeholder: 'State',
+        type: 'text',
+        required: false
+    },
+    {
+        id: 'zipCode',
+        label: 'ZIP Code',
+        placeholder: 'ZIP Code',
+        type: 'text',
+        required: false
+    },
+    {
+        id: 'phone',
+        label: 'Phone *',
+        placeholder: 'Phone',
+        type: 'tel', // Changed to 'tel' for better mobile experience
+        required: true
+    }
+];
+
+export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData, aboutUs, team, billingFields}
