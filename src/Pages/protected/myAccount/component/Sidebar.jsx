@@ -21,7 +21,21 @@ const Sidebar = () => {
                     </ul>
                 </div>
             ))}
+            {sidebarConfig.singleItems.map((item) => (
+                <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className={({ isActive }) =>
+                        `normal-text-semibold transition-colors ${
+                            isActive ? 'text-blue-600' : 'hover:text-blue-600'
+                        }`
+                    }
+                >
+                    {item.name}
+                </NavLink>
+            ))}
         </div>
+
     );
 };
 

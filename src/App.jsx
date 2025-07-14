@@ -21,6 +21,8 @@ const Cart = lazy(() => import("./Pages/protected/Cart/Cart.jsx"));
 const Checkout = lazy(() => import("./Pages/protected/Checkout/Checkout.jsx"));
 const MyAccount = lazy(() => import("./Pages/protected/myAccount/MyAccount.jsx"));
 const EditProfile = lazy(() => import("./Pages/protected/myAccount/component/EditProfile.jsx"));
+const AddressBook = lazy(() => import("./Pages/protected/myAccount/component/AddressBook.jsx"));
+const PaymentOptions = lazy(() => import("./Pages/protected/myAccount/component/PaymentOptions.jsx"));
 const App = () => {
     const { isAuthenticated, user } = useAuth();
     return (
@@ -46,8 +48,9 @@ const App = () => {
                         <Route path ="/cart" element={<Cart/>} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/my-account" element={<MyAccount user={user}/>}>
-                            <Route index element={<EditProfile user={user}/>} />
-
+                            <Route path="edit-profile" element={<EditProfile user={user}/>} />
+                            <Route path="address-book" element={<AddressBook user={user}/>} />
+                            <Route path="payment-options" element={<PaymentOptions user={user}/>} />
                         </Route>
                         {/* Add more protected routes here */}
                     </Route>

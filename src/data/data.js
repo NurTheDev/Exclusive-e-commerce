@@ -199,9 +199,9 @@ const sidebarConfig = {
         {
             title: "Manage My Account",
             items: [
-                { name: "My Profile", path: "/my-account" },
-                { name: "Address Book", path: "/my-account/address-book" },
-                { name: "My Payments Options", path: "/my-account/payment-options" }
+                { name: "My Profile", path: "edit-profile" },
+                { name: "Address Book", path: "address-book" },
+                { name: "My Payments Options", path: "payment-options" }
             ]
         },
         {
@@ -213,59 +213,7 @@ const sidebarConfig = {
         }
     ],
     singleItems: [
-        { name: "My WishList", path: "/my-account/wishlist" }
+        { name: "My WishList", path: "/wishlist" }
     ]
 };
-const editProfile =[
-    {
-        id: 1,
-        title: "First Name",
-        placeholder: "First Name",
-        type: "text",
-        required: true
-    },
-    {
-        id: 2,
-        title: "Last Name",
-        placeholder: "Last Name",
-        type: "text",
-        required: true
-    },
-    {
-        id: 3,
-        title: "Email",
-        placeholder: "Email",
-        type: "email",
-        required: true
-    },
-    {
-        id: 4,
-        title: "Address",
-        placeholder: "Address",
-        type: "text",
-        required: true
-    }
-    // ,
-    // {
-    //     id: 5,
-    //     title: "Password Changes",
-    //     placeholder: "Current Password",
-    //     type: "password",
-    //     required: true
-    // },
-    // {
-    //     id: 6,
-    //     title: "Password Changes",
-    //     placeholder: "New Password",
-    //     type: "password",
-    //     required: true
-    // },
-    // {
-    //     id: 7,
-    //     title: "Password Changes",
-    //     placeholder: "Confirm Password",
-    //     type: "password",
-    //     required: true
-    // }
-]
-export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData, aboutUs, team, billingFields,sidebarConfig, editProfile}
+export {menuItems, bannerData, categories, product, offerData, FacilityData, NavbarData, aboutUs, team, billingFields,sidebarConfig}
