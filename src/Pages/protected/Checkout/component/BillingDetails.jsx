@@ -1,15 +1,7 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {billingFields} from "../../../../data/data.js";
-
-const BillingInput = ({label, placeholder, type, register, name, required}) => {
-    return (
-        <fieldset className="fieldset">
-            <legend className="fieldset-legend text-text1">{label}</legend>
-            <input type={type} className="input w-full lg:w-2/3" placeholder={placeholder} {...register(name, {required: required})}/>
-        </fieldset>
-    )
-}
+import Input from "../../../../comonComponent/Input.jsx";
 const BillingDetails = ({onChange}) => {
     const {
         register,
@@ -39,11 +31,11 @@ const BillingDetails = ({onChange}) => {
     }, [onChange, watch, errors]);
     return (
         <div className={"w-full"}>
-            <h2 className={"large-heading-semi-bold"}>Billing Details</h2>
+            <h2 className={"large-heading-semi-bold mb-5"}>Billing Details</h2>
             <form action="">
                 {billingFields?.map((item, index) => (
                    <div key={index}>
-                       <BillingInput
+                       <Input
                            label={item.label}
                            placeholder={item.placeholder}
                            type={item.type}
@@ -51,6 +43,7 @@ const BillingDetails = ({onChange}) => {
                            name={item.id}
                            required={item.required}
                            errors={errors}
+                           className={"lg:w-2/3"}
                        />
                        {errors[item.id] && (
                            <span className="text-red-500 font-semibold">{item.label} is required</span>
@@ -73,4 +66,4 @@ const BillingDetails = ({onChange}) => {
     );
 };
 
-export default BillingDetails;
+export default React.memo(BillingDetails);

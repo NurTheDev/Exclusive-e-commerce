@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import Input from "../../comonComponent/Input.jsx";
+import Input from "../../comonComponent/LoginInput.jsx";
 const AuthForm = ({
   formType = 'login', // 'login' or 'signup'
   onSubmit,

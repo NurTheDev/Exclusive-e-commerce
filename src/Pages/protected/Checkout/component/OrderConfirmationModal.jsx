@@ -172,4 +172,4 @@ const OrderConfirmationModal = ({
     );
 };
 
-export default OrderConfirmationModal;
+export default React.memo(OrderConfirmationModal);

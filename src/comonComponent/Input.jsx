@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Input = (props) => {
-    const {register, name, placeholder, pattern, required, type, className} = props
+const Input = ({label, placeholder, type, register, name, required, className, value, onChange}) => {
     return (
-        <div>
-            <input {...register(name, {required: required, pattern: pattern})} type={type} placeholder={placeholder} className={`outline-none border-none
-                 w-full focus:outline-none focus:border-none focus:ring-0 px-0 placeholder:text-text1 ${className}`}/>
-        </div>
-    );
+        <fieldset className="fieldset">
+            <legend className="fieldset-legend text-text1">{label}</legend>
+            <input onChange={onChange} value={value && value} type={type} className={`input w-full ${className}`} placeholder={placeholder} {...register(name, {required: required})}/>
+        </fieldset>
+    )
 };
 
-export default React.memo(Input);
+export default Input;

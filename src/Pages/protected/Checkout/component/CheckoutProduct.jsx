@@ -186,4 +186,4 @@ const CheckoutProduct = ({onSubmit, isProcessing, canProceed}) => {
     );
 };
 
-export default CheckoutProduct;
+export default React.memo(CheckoutProduct);

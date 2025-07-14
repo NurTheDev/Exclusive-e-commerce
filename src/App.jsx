@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useAuth } from "./hooks/useAuth.js";
 
+
 // Lazy-loaded components
 const Home = lazy(() => import("./Pages/protected/home/Home.jsx"));
 const Index = lazy(() => import("./Pages/protected/Index.jsx"));
@@ -18,6 +19,8 @@ const LoginRequired = lazy(() => import("./Pages/Not Found/LoginRequird.jsx"));
 const About = lazy(() => import("./Pages/protected/About/About.jsx"));
 const Cart = lazy(() => import("./Pages/protected/Cart/Cart.jsx"));
 const Checkout = lazy(() => import("./Pages/protected/Checkout/Checkout.jsx"));
+const MyAccount = lazy(() => import("./Pages/protected/myAccount/MyAccount.jsx"));
+const EditProfile = lazy(() => import("./Pages/protected/myAccount/component/EditProfile.jsx"));
 const App = () => {
     const { isAuthenticated } = useAuth();
     return (
@@ -42,6 +45,10 @@ const App = () => {
                         <Route path="product/:id" element={<ProductDetails />} />
                         <Route path ="/cart" element={<Cart/>} />
                         <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/my-account" element={<MyAccount />}>
+                            <Route index element={<EditProfile />} />
+                            
+                        </Route>
                         {/* Add more protected routes here */}
                     </Route>
                         <Route path="*" element={<NotFound />} />
