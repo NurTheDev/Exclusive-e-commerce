@@ -8,7 +8,7 @@ A modern, responsive e-commerce platform built with React and powered by Firebas
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.10-38B2AC?logo=tailwind-css)
 ![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux)
 
-##Live lin
+## Live lin
 click here: https://exclusive-stroe-94iprjxnq-nur756islam-gmailcoms-projects.vercel.app/
 
 ## 🚀 Features
