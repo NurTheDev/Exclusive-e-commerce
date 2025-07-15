@@ -4,7 +4,7 @@ const Input = ({label, placeholder, type, register, name, required, className, v
     return (
         <fieldset className="fieldset">
             <legend className="fieldset-legend text-text1">{label}</legend>
-            <input onChange={onChange} value={value && value} type={type} className={`input w-full ${className}`} placeholder={placeholder} {...register(name, {required: required})}/>
+            <input onChange={onChange} value={value && value} type={type} className={`input w-full bg-secondaryColor ${className}`} placeholder={placeholder} {...register(name, {required: required})}/>
         </fieldset>
     )
 };

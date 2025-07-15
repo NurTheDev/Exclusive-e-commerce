@@ -23,6 +23,7 @@ const MyAccount = lazy(() => import("./Pages/protected/myAccount/MyAccount.jsx")
 const EditProfile = lazy(() => import("./Pages/protected/myAccount/component/EditProfile.jsx"));
 const AddressBook = lazy(() => import("./Pages/protected/myAccount/component/AddressBook.jsx"));
 const PaymentOptions = lazy(() => import("./Pages/protected/myAccount/component/PaymentOptions.jsx"));
+const ContactUs = lazy(() => import("./Pages/protected/Contact/ContactUs.jsx"));
 const App = () => {
     const { isAuthenticated, user } = useAuth();
     return (
@@ -41,12 +42,12 @@ const App = () => {
                     <Route element={<Index />}>
                         <Route index element={<Home />} />
                         <Route path="about" element={<About/>} />
-                        <Route path="contact" element={<h1>contact</h1>} />
                         <Route path="wishlist" element={<WishList />} />
                         <Route path="category/:id" element={<Product />} />
                         <Route path="product/:id" element={<ProductDetails />} />
                         <Route path ="/cart" element={<Cart/>} />
                         <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/contact" element={<ContactUs />} />
                         <Route path="/my-account" element={<MyAccount user={user}/>}>
                             <Route path="edit-profile" element={<EditProfile user={user}/>} />
                             <Route path="address-book" element={<AddressBook user={user}/>} />
