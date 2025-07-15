@@ -66,7 +66,7 @@ const Navbar = () => {
                             ))}
                         </ul>
                     </div>
-                    <a className="cursor-pointer medium-heading ">Exclusive</a>
+                    <Link to="/" className="cursor-pointer medium-heading ">Exclusive</Link>
                 </div>
                 {/* Desktop menu */}
                 <div className="navbar-center hidden lg:flex">
