@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import Breadcrumbs from "../../../comonComponent/Breadcrumbs.jsx";
 import useGetProduct from "../../../hooks/useGetProduct.js";
 import Button from "../../../comonComponent/Button.jsx";
@@ -14,17 +14,20 @@ const Cart = () => {
     const [isCouponApplied, setIsCouponApplied] = useState(false);
     const [couponError, setCouponError] = useState("");
     const navigate = useNavigate();
-
+    const productList = useMemo(() => (
+        Array.isArray(product) ? product :
+            (product && typeof product === 'object') ? Object.values(product) : []
+    ), [product])
     const handleUpdate = useCallback(()=>{
         let sum = 0;
-        product.forEach((item) => {
+        productList.forEach((item) => {
             sum += item.price * (item.quantity || 1);
         });
         setSubTotal(parseFloat(sum.toFixed(2)));
         setTotal(parseFloat((sum + 100).toFixed(2)));
         setIsCouponApplied(false);
         setCouponError("");
-    }, [product])
+    }, [productList])
 
     const handleCoupon = useCallback(()=>{
         if(subTotal > 0){
@@ -50,14 +53,14 @@ const Cart = () => {
                     subTotal: subTotal,
                     isCouponApplied: isCouponApplied,
                     coupon: coupon,
-                    product: product
+                    product: productList
                 }
             });
         } else {
             setCouponError("Update cart first");
             alert("Update cart first");
         }
-    }, [coupon, isCouponApplied, navigate, subTotal, total, product])
+    }, [coupon, isCouponApplied, navigate, subTotal, total, productList])
 
     return (
         <div className={"container mx-auto px-6 lg:px-0"}>
@@ -71,7 +74,7 @@ const Cart = () => {
                     <p className={"normal-text"}>Total</p>
                 </div>
                 {loading ? (<CartRowSkeleton/>):!loading && product && (
-                    product.map((product, index) => (
+                    productList.map((product, index) => (
                         <CartRow
                             key={product.id || index}
                             product={product}
