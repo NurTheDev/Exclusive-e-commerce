@@ -50,7 +50,7 @@ const ContactUs = () => {
                         <p>Emails: support@exclusive.com</p>
                     </div>
                 </div>
-                <form className={"col-span-3 ml-20"}>
+                <form className={"lg:col-span-3 lg:ml-20"}>
                     {success && (
                         <div className={`mt-4 mb-4 p-3 rounded border text-center bg-green-100 border-green-300 text-green-700`}>
                             <p className={"normal-text-semi-bold"}>Your message has been sent successfully.</p>

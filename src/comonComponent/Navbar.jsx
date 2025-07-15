@@ -48,11 +48,22 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
                         >
-                            <li><a>Home</a></li>
-                            <li>
-                                <a>Parent</a>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            {NavbarData.map((item, index)=>(
+                                <li key={index} className="relative group">
+                                    <NavLink to={item.link} key={index} className={``}>
+                                        {({ isActive }) => (
+                                            <>
+                                                {isActive ? (
+                                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary2 transition-all duration-300 ease-out group-hover:w-full"></span>
+                                                ) : (
+                                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out "></span>
+                                                )}
+                                                <span on className="relative">{item.title}</span>
+                                            </>
+                                        )}
+                                    </NavLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <a className="cursor-pointer medium-heading ">Exclusive</a>

@@ -66,8 +66,8 @@ const Cart = () => {
         <div className={"container mx-auto px-6 lg:px-0"}>
             <Breadcrumbs/>
             <div className={"relative mt-10"}>
-                <div className={"static w-full z-50 bg-white rounded-b-lg text-center" +
-                    " shadow-[0px_1px_13px_0px_rgba(0,0,0,0.05)] grid grid-cols-4 items-center py-4"}>
+                <div className={"lg:static w-full z-50 bg-white rounded-b-lg text-center hidden" +
+                    " shadow-[0px_1px_13px_0px_rgba(0,0,0,0.05)] lg:grid grid-cols-4 items-center py-4"}>
                     <p className={"normal-text"}>Product</p>
                     <p className={"normal-text"}>Price</p>
                     <p className={"normal-text"}>Quantity</p>
@@ -81,7 +81,7 @@ const Cart = () => {
                         />
                     ))
                 )}
-                <div className={"flex justify-between items-center px-3 lg:px-0"}>
+                <div className={"flex justify-between gap-x-5 items-center lg:px-3 lg:px-0"}>
                     <Button
                         onClick={() => navigate("/")}
                         btnText={"Return To Shop"}
@@ -94,7 +94,7 @@ const Cart = () => {
                     />
                 </div>
             </div>
-            <div className={"flex justify-between items-start mt-10"}>
+            <div className={"flex flex-col lg:flex-row justify-between items-start mt-10"}>
                 <div className={"flex justify-center items-start gap-6"}>
                     <div>
                         <input
@@ -113,7 +113,7 @@ const Cart = () => {
                         className={"border bg-secondary2 hover:bg-secondaryColor hover:text-black text-white border-black/50 px-12"}
                     />
                 </div>
-                <div className={"lg:w-1/3 border border-gray-300 rounded-lg p-5 flex flex-col"}>
+                <div className={"lg:w-1/3 w-full mt-10 lg:mt-0 border border-gray-300 rounded-lg p-5 flex flex-col"}>
                     <h5 className={"small-heading-semi-bold"}>Cart Total</h5>
                     <div className={"flex justify-between items-center mt-4 border-b border-black/30 pb-4"}>
                         <p>Subtotal</p>
