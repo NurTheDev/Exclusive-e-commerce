@@ -102,11 +102,11 @@ const Navbar = () => {
                     </div>
                     {/* Cart dropdown */}
                     <div className=" flex items-center">
-                        <div className="btn btn-ghost btn-circle">
+                        <div onClick={() => navigate("/cart")} className="btn btn-ghost btn-circle">
                             <div className="indicator">
                                 <span className={" text-xl"}><FiShoppingCart/></span>
-                                <Link to={"/cart"}
-                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">{productList.length}</Link>
+                                <span
+                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">{productList.length}</span>
                             </div>
                         </div>
                         <div className=" ml-4">
