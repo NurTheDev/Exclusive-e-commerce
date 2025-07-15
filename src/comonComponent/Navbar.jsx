@@ -101,28 +101,16 @@ const Navbar = () => {
                         </span>
                     </div>
                     {/* Cart dropdown */}
-                    <div className="dropdown dropdown-end flex items-center">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                    <div className=" flex items-center">
+                        <div className="btn btn-ghost btn-circle">
                             <div className="indicator">
                                 <span className={" text-xl"}><FiShoppingCart/></span>
-                                <span
-                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">{productList.length}</span>
+                                <Link to={"/cart"}
+                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">{productList.length}</Link>
                             </div>
                         </div>
                         <div className=" ml-4">
                             <span onClick={() => navigate("/wishlist")} className={"cursor-pointer text-xl"}><FaRegHeart/></span>
-                        </div>
-                        <div
-                            tabIndex={0}
-                            className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow"
-                        >
-                            <div className="card-body">
-                                <span className="text-lg font-bold">{productList.length} Items</span>
-                                <span className="text-info">Subtotal: $999</span>
-                                <div className="card-actions">
-                                    <Link to="/cart" className="btn btn-primary btn-block">View cart</Link>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

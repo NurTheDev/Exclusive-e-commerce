@@ -9,7 +9,7 @@ A modern, responsive e-commerce platform built with React and powered by Firebas
 ![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux)
 
 ## Live link
-click here: https://exclusive-stroe-94iprjxnq-nur756islam-gmailcoms-projects.vercel.app/
+click here: https://exclusive-stroe.vercel.app/
 
 ## 🚀 Features
 
