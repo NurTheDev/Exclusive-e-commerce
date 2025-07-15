@@ -58,7 +58,7 @@ const Navbar = () => {
                                                 ) : (
                                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out "></span>
                                                 )}
-                                                <span on className="relative">{item.title}</span>
+                                                <span className="relative">{item.title}</span>
                                             </>
                                         )}
                                     </NavLink>
@@ -81,7 +81,7 @@ const Navbar = () => {
                                             ) : (
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out "></span>
                                             )}
-                                            <span on className="relative">{item.title}</span>
+                                            <span className="relative">{item.title}</span>
                                         </>
                                     )}
                                 </NavLink>
