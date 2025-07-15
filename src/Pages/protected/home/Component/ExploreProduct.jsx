@@ -6,9 +6,11 @@ import {useGetProductQuery} from "../../../../features/API/productAPI.js";
 import ErrorComponent from "../../../../helper/ErrorComponent.jsx";
 import CustomCarousel from "../../../../helper/CustomCarousel.jsx";
 import {getSettings} from "../../../../utils/index.js";
+import {useNavigate} from "react-router";
 const ExploreProduct = () => {
     const { data, error, isLoading } = useGetProductQuery()
     const settings = getSettings("exploreProduct");
+    const navigate = useNavigate();
     return (
         <div className={"container mx-auto"}>
             <Heading heading={"Explore Our Products"} title={"Our Products"}/>
@@ -17,7 +19,8 @@ const ExploreProduct = () => {
                 <CustomCarousel button={"arrows"} type={"product"} data={data?.products || []} error ={error} settings={settings} loading={isLoading}/>
             </div>
             <div className={"flex justify-center items-center mt-10"}>
-                <Button className={"bg-secondary2 text-white py-4 px-12 mt-10"} btnText={"View All Products"}/>
+                <Button onClick={()=> navigate("/product")} className={"bg-secondary2 text-white py-4 px-12 mt-10"} btnText={"View" +
+                    " All Products"}/>
             </div>
         </div>
     );

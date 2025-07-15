@@ -5,9 +5,14 @@ import Button from "../../../../comonComponent/Button.jsx";
 import ErrorComponent from "../../../../helper/ErrorComponent.jsx";
 import {useGetProductQuery} from "../../../../features/API/productAPI.js";
 import {getSettings} from "../../../../utils/index.js";
+import {useNavigate} from "react-router";
 
 const Offer = () => {
     const settings = getSettings("offer")
+    const navigate = useNavigate()
+    const handleBuyNow=(product)=>{
+        navigate(`/product/${product.id}`);
+    }
     const { data, error } = useGetProductQuery()
    if(error){
        return <ErrorComponent error={error} title="Failed to load offers" />
@@ -28,7 +33,9 @@ const Offer = () => {
                                        <p className={"text-button normal-text-semi-bold"}>Categories</p>
                                        <h2 className={"text-white xl-heading-semi-bold"}>{item.title}</h2>
                                        <Timer className={"text-white"} active={true} time={Math.round(item.rating)}/>
-                                       <Button btnText={"Buy Now"} className={"bg-button text-white px-12 mt-10"}/>
+                                       <Button onClick={()=> handleBuyNow(item)} btnText={"Buy Now"} className={"bg-button" +
+                                           " text-white" +
+                                           " px-12 mt-10"}/>
                                    </div>
                                    <div className={"lg:w-2/3 h-full flex items-center imageDropShadow"}>
                                        <img src={item.images} alt={item.name} className="w-full object-fit h-full "/>

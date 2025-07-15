@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useMemo} from 'react';
 import Status from "./Status.jsx";
 import user from "../assets/user.svg";
 import {IoMdSearch} from "react-icons/io";
@@ -6,11 +6,17 @@ import {FaRegHeart, FaRegUser, FaShoppingBag} from "react-icons/fa";
 import {FiShoppingCart, FiStar} from "react-icons/fi";
 import {BiCollection} from "react-icons/bi";
 import {CgLogOut} from "react-icons/cg";
-import {NavLink, useNavigate} from "react-router";
+import {Link, NavLink, useNavigate} from "react-router";
 import {NavbarData} from "../data/data.js";
 import {AuthContext} from "../Context/index.js";
+import useGetProduct from "../hooks/useGetProduct.js";
 
 const Navbar = () => {
+    const {product} = useGetProduct("cart")
+    const productList = useMemo(() => (
+        Array.isArray(product) ? product :
+            (product && typeof product === 'object') ? Object.values(product) : []
+    ), [product])
     const navigate=useNavigate();
     const {signOutUser}= useContext(AuthContext);
     const handleLogout= async ()=>{
@@ -64,7 +70,7 @@ const Navbar = () => {
                                             ) : (
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary2 transition-all duration-300 ease-out "></span>
                                             )}
-                                            <span className="relative">{item.title}</span>
+                                            <span on className="relative">{item.title}</span>
                                         </>
                                     )}
                                 </NavLink>
@@ -75,8 +81,8 @@ const Navbar = () => {
 
                 {/* Cart + Avatar (end) */}
                 <div className="navbar-end flex-none">
-                    <div className={"relative items-center mr-5 hidden lg:flex"}>
-                        <input type="text" placeholder="Search"
+                    <div  className={"relative items-center mr-5 hidden lg:flex"}>
+                        <input onChange={(e) => navigate(`/product?search?q=${e.target.value}`)} type="text" placeholder="Search"
                                className="input input-bordered input-sm mr-5 bg-gray-100"/>
                         <span
                             className={"absolute right-4 px-2 cursor-pointer text-2xl z-10 text-gray-500 hover:text-gray-600"}>
@@ -89,21 +95,21 @@ const Navbar = () => {
                             <div className="indicator">
                                 <span className={" text-xl"}><FiShoppingCart/></span>
                                 <span
-                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">8</span>
+                                    className=" indicator-item bg-red-500 text-white rounded-full border border-white w-5 h-5 text-xs">{productList.length}</span>
                             </div>
                         </div>
                         <div className=" ml-4">
-                            <span className={"cursor-pointer text-xl"}><FaRegHeart/></span>
+                            <span onClick={() => navigate("/wishlist")} className={"cursor-pointer text-xl"}><FaRegHeart/></span>
                         </div>
                         <div
                             tabIndex={0}
                             className="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow"
                         >
                             <div className="card-body">
-                                <span className="text-lg font-bold">8 Items</span>
+                                <span className="text-lg font-bold">{productList.length} Items</span>
                                 <span className="text-info">Subtotal: $999</span>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary btn-block">View cart</button>
+                                    <Link to="/cart" className="btn btn-primary btn-block">View cart</Link>
                                 </div>
                             </div>
                         </div>
@@ -125,20 +131,20 @@ const Navbar = () => {
                              bg-black/30  dropdown-content rounded-box z-10 mt-3 w-52 p-2 shadow backdrop-blur-md"
                         >
                             <li>
-                                <a className="justify-between w-full">
+                                <Link to={"my-account/edit-profile"} className="justify-between w-full">
                                     <span
                                         className={"flex gap-x-2 items-center"}><FaRegUser/> <span>Profile</span></span>
 
                                     <span className="badge bg-red-500 text-white">New</span>
-                                </a>
+                                </Link>
                             </li>
-                            <li><a
-                                className="justify-start gap-x-2 w-full items-center"><span><FaShoppingBag/></span><span>My order</span></a>
+                            <li><Link to={"/cart"}
+                                className="justify-start gap-x-2 w-full items-center"><span><FaShoppingBag/></span><span>My order</span></Link>
                             </li>
-                            <li><a
-                                className="justify-start gap-x-2 w-full items-center"><span><BiCollection/></span><span>Collections</span></a>
-                            </li><li><a
-                                className="justify-start gap-x-2 w-full items-center"><span><FiStar/></span><span>My Review</span></a>
+                            <li><Link to={"/wishlist"}
+                                className="justify-start gap-x-2 w-full items-center"><span><BiCollection/></span><span>Collections</span></Link>
+                            </li><li><Link to={"/review"}
+                                className="justify-start gap-x-2 w-full items-center"><span><FiStar/></span><span>My Review</span></Link>
                             </li>
                             <li><a onClick={handleLogout}
                                 className="justify-start gap-x-2 w-full items-center"><span><CgLogOut  /></span><span>Log out</span></a>

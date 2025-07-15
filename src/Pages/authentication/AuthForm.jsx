@@ -76,7 +76,7 @@ const AuthForm = ({
           <span className="text-red-500 font-semibold">Password must be at most 20 characters</span>
         )}
         {errors.password?.type === "pattern" && (
-          <span className="text-red-500 font-semibold">Password must contain at least one letter and one number</span>
+          <span className="text-red-500 font-semibold">Password must contain at least one letter, one number and one special character</span>
         )}
       </div>
       <button

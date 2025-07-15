@@ -5,6 +5,7 @@ import ArrowGroup from "./ArrowGroup.jsx";
 import CategoryCard from "../comonComponent/CategoryCard.jsx";
 import Button from "../comonComponent/Button.jsx";
 import ErrorComponent from "./ErrorComponent.jsx";
+import ProductSkeleton from "../Skeleton/ProductSkeleton.jsx";
 
 const CustomCarousel = (props) => {
     const sliderRef = useRef(null);
@@ -27,7 +28,7 @@ const CustomCarousel = (props) => {
                 <Slider ref={sliderRef} {...props.settings}>
                     {props.data?.map((item, index) =>(
                         <div key={index} className="px-2 lg:px-4 !flex !justify-center !items-center">
-                            {props.type === "product" ? <ProductCard product={item} loading={props.loading} discount={props.discount}/> : <CategoryCard data={item} />}
+                            {props.type === "product" ? props.isLoading ? <ProductSkeleton/> : <ProductCard product={item} /> : <CategoryCard data={item} />}
                         </div>
                     ))}
                 </Slider>

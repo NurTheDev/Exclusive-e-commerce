@@ -5,9 +5,10 @@ import Button from "../../../../comonComponent/Button.jsx";
 import {getSettings} from "../../../../utils/index.js";
 import Timer from "../../../../helper/Timer.jsx";
 import {useGetProductQuery} from "../../../../features/API/productAPI.js";
-
+import {useNavigate} from "react-router";
 const FlashSell = () => {
     const settings = getSettings("product");
+    const navigate = useNavigate();
     const { data, error, isLoading } = useGetProductQuery()
     return (
         <div className={"container mx-auto"}>
@@ -18,7 +19,7 @@ const FlashSell = () => {
             <div className={"mt-10"}>
                 <CustomCarousel button={"arrows"} type={"product"} data={data?.products || []} error ={error} settings={settings} loading={isLoading} discount={true}/>
                 <div className={"flex justify-center items-center mt-10 px-3 lg:px-0"}>
-                    <Button className={"bg-secondary2 text-white px-12 mt-10"} btnText={"View All Products"}/>
+                    <Button onClick={()=> navigate("/product")} className={"bg-secondary2 text-white px-12 mt-10"} btnText={"View All Products"}/>
                 </div>
             </div>
             <hr className={"my-10 bg-black/30 opacity-30"}/>

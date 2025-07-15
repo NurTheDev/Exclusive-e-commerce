@@ -108,8 +108,8 @@ const NavbarData = [
     },
     {
         id: 4,
-        title: "Sign Out",
-        link: "/signout"
+        title: "Product",
+        link: "/product"
     }
 ]
 const aboutUs =[
