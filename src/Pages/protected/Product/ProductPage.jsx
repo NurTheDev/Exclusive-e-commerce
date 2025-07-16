@@ -3,20 +3,23 @@ import Breadcrumbs from "../../../comonComponent/Breadcrumbs.jsx";
 import MenuBar from "../../../comonComponent/MenuBar.jsx";
 import {useGetProductByCategoryQuery} from "../../../features/API/productAPI.js";
 import ProductCard from "../../../comonComponent/ProductCard.jsx";
-import NoProductsFound from "../../../helper/NoProductFound.jsx";
+import NoProductsFound from "../../../helper/NoProductsFound.jsx";
 import ProductCardSkeleton from "../../../Skeleton/ProductSkeleton.jsx";
 import Pagination from "../../../helper/Pagination.jsx";
+import {useLocation} from "react-router";
 
 const ProductPage = () => {
-    const [categories, setCategories] = useState("");
+    const location = useLocation()
+    const queryParmas = location.pathname.split('/');
+    const [categories, setCategories] = useState(queryParmas[queryParmas.length - 1]);
     const [showItems, setShowItems] = useState(3);
     const {data, isLoading} = useGetProductByCategoryQuery(categories)
-    const isCategoryData = !data?.products?.length
+    const isCategoryData = data?.products?.length
     const [page, setPage] = useState(1);
     const itemsPerPage = showItems;
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentItems = data?.products?.slice(startIndex, endIndex)
+    const currentItems = Array.isArray(data?.products) ? data?.products.slice(startIndex, endIndex) : [];
     return (
         <div className={"container mx-auto"}>
             <Breadcrumbs/>
@@ -43,7 +46,7 @@ const ProductPage = () => {
                                 ))}
                             </div>
                         ) : (
-                            isCategoryData ? <NoProductsFound/> : (
+                            !isCategoryData ? <NoProductsFound/> : (
                                 <div className={"grid grid-cols-1 lg:grid-cols-3 gap-5"}>
                                     {currentItems.map((product, index) => (
                                         <ProductCard key={index} product={product} discount={true}/>

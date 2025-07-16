@@ -13,12 +13,11 @@ const NoProductsFound = ({
                              className = ''
                          }) => {
     const navigate = useNavigate();
-
     const suggestions = [
-        { name: 'Electronics', icon: '📱', path: '/category/electronics' },
-        { name: 'Fashion', icon: '👕', path: '/category/fashion' },
-        { name: 'Home & Garden', icon: '🏠', path: '/category/home' },
-        { name: 'Sports', icon: '⚽', path: '/category/sports' }
+        { name: 'Electronics', icon: '📱', path: '/category/mobile-accessories' },
+        { name: 'Fashion', icon: '👕', path: '/category/mens-shirts' },
+        { name: 'Home & Garden', icon: '🏠', path: '/category/motorcycle' },
+        { name: 'Sports', icon: '⚽', path: '/category/sports-accessories' }
     ];
 
     const handleGoHome = () => {
